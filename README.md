@@ -12,7 +12,9 @@ We provide here the scripts that can be used to profile the Linux kernel TCP sta
 The repository contains as follows:
 
 * `PhysicalTopology` contains topology generating script codes; `linear.py`, `fattree.py` based on Mininet.
-* `SDN controller` contains executing SDN controller(ONOS) script code, `onos.sh`   
+* `SDN controller` contains executing SDN controller(ONOS) script code, `onos.sh`
+* `Meteor` contains Java xx codes for executing Meteor network hypervisor and Meteor  
+* `Meteor predictor` contains training/inferencing codes      
 * `scripts` contains scripts used to run experiments for our SIGCOMM 2021 paper.
     * `scripts/sender` are the scripts that must be run on the sender-side.
     * `scripts/receiver` are the respective receiver-side scripts.
