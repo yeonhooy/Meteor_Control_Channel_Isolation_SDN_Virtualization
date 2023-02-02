@@ -67,6 +67,8 @@ sudo python linear.py
 ### 2. Run SDN controller
 
 ### 3. Run *Meteor* network hypervisor
+### run *Meteor*
+### generate virtual network per tenant
 
 ### 4. Training Meteor predictor
 
