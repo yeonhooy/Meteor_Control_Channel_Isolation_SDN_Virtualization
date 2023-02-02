@@ -16,7 +16,7 @@ We provide all of source codes of implementation and scripts that can be used to
 The repository contains as follows:
 
 * `PhysicalTopology/` contains topology generating script codes; `linear.py`, `fattree.py` based on Mininet.
-* `SDN controller/` contains executing SDN controller(ONOS) script code, `onos.sh`
+* `SDNcontroller/` contains executing SDN controller(ONOS) script code, `onos.sh`
 * `Meteor/` contains Java Maven project for Meteor implementation 
    * `Meteor/Meteorstart.sh` for starting Meteor network hypervisor
    * `Meteor/MeteorPredictor/` for inferencing control traffic
