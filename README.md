@@ -13,17 +13,10 @@ The repository contains as follows:
 
 * `PhysicalTopology` contains topology generating script codes; `linear.py`, `fattree.py` based on Mininet.
 * `SDN controller` contains executing SDN controller(ONOS) script code, `onos.sh`
-* `Meteor` contains Java xx codes for executing Meteor network hypervisor and Meteor  
-* `Meteor predictor` contains training/inferencing codes      
-* `scripts` contains scripts used to run experiments for our SIGCOMM 2021 paper.
-    * `scripts/sender` are the scripts that must be run on the sender-side.
-    * `scripts/receiver` are the respective receiver-side scripts.
-    * `scripts/parse` are the scripts that can be used to parse and pretty print the results of an experiment after it's finished.
-* `run_experiment_sender.py`, `run_experiment_receiver.py` are the scripts that actually run the experiment.
-    * `network_setup.py` allows us to configure the NIC to enable/disable various offloads, set parameters and so on.
-    * `constants.py` contains the constants used by our scripts.
-    * `process_output.py` contains utilily code to parse outputs from the benchmarking programs.
-* `symbol_mapping.tsv` is a map from kernel symbols/function names to the classification into one of seven categories depending on their function or their location in the kernel TCP stack.
+* `Meteor` contains Java Maven project, `MeteorNH` for Meteor implementation and exectuion script file, `Meteorstart.sh` for starting Meteor network hypervisor.  
+* `Meteor predictor` contains training/inferencing codes
+   * Meteor predictor/training
+   * Meteor predictor/inference
 
 Below you will find instructions on how to use the tools provided in this repository to either reproduce our findings or profile your own setup to explore it's characteristics.
 
