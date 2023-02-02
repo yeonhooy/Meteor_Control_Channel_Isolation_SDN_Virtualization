@@ -95,6 +95,9 @@ sudo python linear.py
 ```
 
 ### 2. Run SDN controller
+```
+sudo sh onos.sh -t <total tenant number> -i <SDN controller server IP address> 
+```
 
 ### 3. Run *Meteor* network hypervisor
 ### run *Meteor*
