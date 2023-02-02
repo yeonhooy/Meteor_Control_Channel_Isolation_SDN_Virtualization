@@ -126,17 +126,26 @@ if success, you can find *Success to start Meteor!!*
    
    2) tree VN topology
    cd fattree/
-   provide two types of VN topology / image attach
+   For fattree, We provide pre-created script for two types of VN topology / image attach
+   In this scirpts, we support up to eight tenants. Also, we only create one host pair in one VN. If you need, you can modify code freely.
    2-1) 2-pod topology: t<tenantID>.sh 
    2-2) full-pod topology: fullpod_t<tenantID>.sh
   ```
   * Create vn    
   ```
-  1) linear VN topology: `sudo sh total_<tenantNum>_<VNnodeNum>.sh $IP_address`
+  1) linear VN topology: `sudo sh total_<tenantNum>_<VNnodeNum>.sh`
   2) fattree VN topology: `sudo sh t<tenantID>.sh  $IP_address` or `sudo sh fullpod_t<tenantID>.sh  $IP_address`
+    *In fattree case, you have to put <IP_address> for argument
   ```
   
-
+* Check the created VN topology 
+  * Meteor side
+    You can see the Meteor log, and find "xxx"
+  * SDN controller (Tenant) side
+    Access `SDN controller server IP adress`:GUI port
+    GUIport is set to 1000+tenantID. For example, Tenant1's GUI port is 1000.
+    * Image attach
+ 
 ### 4. Training Meteor predictor
 
 ## Evaluation
