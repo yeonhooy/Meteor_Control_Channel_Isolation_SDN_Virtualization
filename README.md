@@ -21,6 +21,7 @@ The repository contains as follows:
    * `Meteor/Meteorstart.sh` for starting Meteor network hypervisor
    * `Meteor/vnCreation/` scripts for creating virtual network topology
    * `Meteor/MeteorPredictor/` for inferencing control traffic
+   * `Meteor/MeteorPredictor/model/meterPredictor.pt` for our pre-trained model
 * `MeteorPredictor_training/` contains training codes and example dataset for Meteor predictor.    
 
 
