@@ -38,7 +38,7 @@ Below you will find instructions on how to use the tools provided in this reposi
 
 ### 2. Run SDN controller
 
-### 3. RUN *Meteor* network hypervisor
+### 3. Run *Meteor* network hypervisor
 
 ### 4. Training Meteor predictor
 
