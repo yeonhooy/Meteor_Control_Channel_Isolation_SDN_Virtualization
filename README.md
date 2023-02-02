@@ -13,7 +13,7 @@ The repository contains as follows:
 
 * `PhysicalTopology` contains topology generating script codes; `linear.py`, `fattree.py` based on Mininet.
 * `SDN controller` contains executing SDN controller(ONOS) script code, `onos.sh`
-* `Meteor` contains Java Maven project, `MeteorNH` for Meteor implementation and exectuion script file, `Meteorstart.sh` for starting Meteor network hypervisor.  
+* `METEOR` contains Java Maven project, `Meteor` for Meteor implementation and exectuion script file, `Meteorstart.sh` for starting Meteor network hypervisor.  
 * `Meteor predictor` contains training/inferencing codes
    * Meteor predictor/training
    * Meteor predictor/inference
