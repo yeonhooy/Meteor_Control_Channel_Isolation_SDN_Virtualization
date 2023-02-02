@@ -131,6 +131,9 @@ if success, you can find *Success to start Meteor!!*
    2-1) 2-pod topology: t<tenantID>.sh 
    2-2) full-pod topology: fullpod_t<tenantID>.sh
   ```
+  ![image](https://user-images.githubusercontent.com/17779090/216348754-30960838-c754-4963-9859-9e68fde3cc4f.png)
+  ![image](https://user-images.githubusercontent.com/17779090/216348801-8cac45fe-7a36-4759-b072-85e1ee6e1231.png)
+  
   * Create vn    
   ```
   1) linear VN topology: `sudo sh total_<tenantNum>_<VNnodeNum>.sh`
@@ -144,7 +147,7 @@ if success, you can find *Success to start Meteor!!*
   * SDN controller (Tenant) side
     Access `SDN controller server IP adress`:GUI port
     GUIport is set to 1000+tenantID. For example, Tenant1's GUI port is 1000.
-    * ![image](https://user-images.githubusercontent.com/17779090/216348067-68309122-8f9e-43cb-829c-b7a762379cbf.png)
+    ![image](https://user-images.githubusercontent.com/17779090/216348067-68309122-8f9e-43cb-829c-b7a762379cbf.png)
 
 
 * Meteor log
