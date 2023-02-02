@@ -105,12 +105,14 @@ sudo docker ps
 ```
 
 ### 3. Run *Meteor* network hypervisor
-### run *Meteor*
+* run *Meteor*
 ```
 cd Meteor/
 sudo sh run_meteor.sh
+
+if success, you can see *Success to start Meteor!!*
 ```
-### generate virtual network per tenant
+* generate virtual network per tenant
 
 ### 4. Training Meteor predictor
 
