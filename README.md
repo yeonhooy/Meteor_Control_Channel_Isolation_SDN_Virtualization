@@ -16,7 +16,7 @@ The repository contains as follows:
 * `Meteor` contains Java Maven project for Meteor implementation 
    * `Meteor/Meteorstart.sh` for starting Meteor network hypervisor
    * `Meteor/MeteorPredictor/` for inferencing control traffic
-* `MeteorPredictor_training` contains training code for Meteor predictor    
+* `MeteorPredictor_training` contains training codes and example dataset for Meteor predictor    
 
 Below you will find instructions on how to use the tools provided in this repository to either reproduce our findings or profile your own setup to explore it's characteristics.
 
