@@ -105,14 +105,37 @@ sudo docker ps
 ```
 
 ### 3. Run *Meteor* network hypervisor
-* run *Meteor*
+* 1. run *Meteor*
 ```
 cd Meteor/
 sudo sh run_meteor.sh
 
-if success, you can see *Success to start Meteor!!*
+if success, you can find *Success to start Meteor!!*
 ```
-* generate virtual network per tenant
+* 2. generate virtual network per tenant
+  * 2-1. generate vncreation script    
+  ```
+  1) linear VN topology
+  cd Meteor/vnCreation/linear
+  python vncreation_linear.py
+   - Total tenant num? > 
+   - VN`s node number? >
+   - Tenant (SDN controller)`s Ip address? > 
+ 
+   *Output: total_<tenantNum>_<VNnodeNum>.sh
+   
+   2) tree VN topology
+   cd fattree/
+   provide two types of VN topology / image attach
+   2-1) 2-pod topology: t<tenantID>.sh 
+   2-2) full-pod topology: fullpod_t<tenantID>.sh
+  ```
+  * 2-1. create vn    
+  ```
+  1) linear VN topology: `sudo sh total_<tenantNum>_<VNnodeNum>.sh $IP_address`
+  2) fattree VN topology: `sudo sh t<tenantID>.sh  $IP_address` or `sudo sh fullpod_t<tenantID>.sh  $IP_address`
+  ```
+  
 
 ### 4. Training Meteor predictor
 
