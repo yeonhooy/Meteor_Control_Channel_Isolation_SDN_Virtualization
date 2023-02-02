@@ -1,0 +1,1 @@
+This directory should be empty when run Meteor
