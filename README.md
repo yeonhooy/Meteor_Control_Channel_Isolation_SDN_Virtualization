@@ -34,13 +34,13 @@ Below you will find instructions on how to use the tools provided in this reposi
 
 ## Running guide
 
-### Run physical topology
+### 1. Run physical topology
 
-### Run SDN controller
+### 2. Run SDN controller
 
-### RUN *Meteor* network hypervisor
+### 3. RUN *Meteor* network hypervisor
 
-### Training Meteor predictor
+### 4. Training Meteor predictor
 
 ## Evaluation
 
