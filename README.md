@@ -54,13 +54,19 @@ The repository contains as follows:
   * Apache maven: 3.0.5 or higher 
   
 ### 4. Network configuration
-* connection between Physcial network server <-> Meteor (`ping` test)
-* connection between SDN controller server <-> Meteor (`ping ` test)
+* Make communication between Physcial network server <-> Meteor (`ping` test)
+* Make communication between SDN controller server <-> Meteor (`ping ` test)
 * Ip address of three servers will be used in [later](#Running-guide)
 
 ### 5. *Meteor* predictor
 * Prerequisite
+  * install libraries with `conda`
+  ```
+  sudo 
+  ```
 * Version check
+  * python
+  * pytorch
 
 ## Running guide
 
