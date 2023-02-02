@@ -20,21 +20,49 @@ The repository contains as follows:
 * `Meteor/` contains Java Maven project for Meteor implementation 
    * `Meteor/Meteorstart.sh` for starting Meteor network hypervisor
    * `Meteor/MeteorPredictor/` for inferencing control traffic
-* `MeteorPredictor_training/` contains training codes and example dataset for Meteor predictor    
+* `MeteorPredictor_training/` contains training codes and example dataset for Meteor predictor.    
 
-Below you will find instructions on how to use the tools provided in this repository to either reproduce our findings or profile your own setup to explore it's characteristics.
 
 ## Server setup and environments
 ### 1. Physical network emulation
+* Prerequisite
+  * install Mininet
+    `sudo apt-get install Mininet`
+  * install python
+    `sudo apt-get install python`
+* Version check
+  * OS: Linux ununtu 18.04 or higher
+  * Kernel: 
+  * OVS: 
 ### 2. SDN controller
+* Prerequisite
+  * install ONOS
+    `ONOS `
+* Version check
+  * OS: Linux ununtu 18.04 or higher
 ### 3. *Meteor*
+* Prerequisite
+  * install mvn (maven)
+    `ONOS `
+* Version check
+  * OS: Linux ununtu 18.04 or higher
 ### 4. Network configuration
+* 
 ### 5. *Meteor* predictor
-
+* Prerequisite
+* Version check
 
 ## Running guide
 
 ### 1. Run physical topology
+We proivde two network topology, linear topolgoy for `PhysicalTopology/linear.py` and fattree topology for `PhysicalTopology/fattree.py`
+These python script uses Mininet API and Mininet utilizes OVS for Openflow switch.
+
+#### Linear topology
+```
+sudo python linear.py
+```
+#### Fat-tree topology
 
 ### 2. Run SDN controller
 
