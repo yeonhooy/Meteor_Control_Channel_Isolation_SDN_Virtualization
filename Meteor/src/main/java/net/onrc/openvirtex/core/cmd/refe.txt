@@ -1,0 +1,61 @@
+public static boolean executeCmd(String cmd) {
+        Process process = null;
+        Runtime runtime = Runtime.getRuntime();
+        StringBuffer successOutput = new StringBuffer();
+        StringBuffer errorOutput = new StringBuffer();
+        BufferedReader successBufferReader = null;
+        BufferedReader errorBufferReader = null;
+        String msg = null;
+        boolean result = false;
+ 
+        List<String> cmdList = new ArrayList<String>();
+ 
+        cmdList.add("/bin/sh");
+        cmdList.add("-c");
+        
+        cmdList.add(cmd);
+        String[] array = cmdList.toArray(new String[cmdList.size()]);
+ 
+        try {
+        	Logger.info(CommonUtil.class, "cmd : " + cmd);
+            process = runtime.exec(array);
+ 
+            successBufferReader = new BufferedReader(new InputStreamReader(process.getInputStream(), "EUC-KR"));
+ 
+            while ((msg = successBufferReader.readLine()) != null) {
+                successOutput.append(msg + System.getProperty("line.separator"));
+            }
+ 
+            errorBufferReader = new BufferedReader(new InputStreamReader(process.getErrorStream(), "EUC-KR"));
+            while ((msg = errorBufferReader.readLine()) != null) {
+                errorOutput.append(msg + System.getProperty("line.separator"));
+            }
+ 
+            process.waitFor();
+ 
+            if (process.exitValue() == 0) {
+                result = true;
+            } else {
+                Logger.error(CommonUtil.class, "abnormal finish error : " + successOutput.toString());
+            }
+ 
+            if (isNotBlank(errorOutput.toString())) {
+                Logger.error(CommonUtil.class, "error : " + successOutput.toString());
+            }
+ 
+        } catch (IOException e) {
+            Logger.error(CommonUtil.class, e.getMessage());
+        } catch (InterruptedException e) {
+            Logger.error(CommonUtil.class, e.getMessage());
+        } finally {
+            try {
+                process.destroy();
+                if (successBufferReader != null) successBufferReader.close();
+                if (errorBufferReader != null) errorBufferReader.close();
+
+            } catch (IOException e1) {
+                Logger.error(CommonUtil.class, e1.getMessage());
+            }
+        }
+        return result;
+    }

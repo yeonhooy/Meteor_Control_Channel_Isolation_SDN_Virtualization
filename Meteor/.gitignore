@@ -1,0 +1,21 @@
+/bin
+.DS_Store
+
+*.class
+
+# Package Files #
+*.war
+*.ear
+
+*.pyc
+
+/.settings/
+/target
+
+.project
+.pydevproject
+
+# Emacs backup files
+*~
+
+.checkstyle
