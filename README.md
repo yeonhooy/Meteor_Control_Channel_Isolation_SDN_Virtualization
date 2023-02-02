@@ -163,6 +163,8 @@ if success, you can find *Success to start Meteor!!*
 * Meteor log
   * You can find Meteor predicts Control traffic and calcualte γ, every window and per control channel (virtual switch)
   * Meteor executes `Meteor/MeteorPredictor/inference.sh` every window
+  ![image](https://user-images.githubusercontent.com/17779090/216380056-943f2f95-5669-4816-8922-98458d44cfc7.png)
+
  
 ### 4. Training Meteor predictor
 
