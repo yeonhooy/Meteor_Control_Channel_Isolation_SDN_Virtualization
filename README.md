@@ -105,15 +105,15 @@ sudo docker ps
 ```
 
 ### 3. Run *Meteor* network hypervisor
-* 1. run *Meteor*
+* Run *Meteor*
 ```
 cd Meteor/
 sudo sh run_meteor.sh
 
 if success, you can find *Success to start Meteor!!*
 ```
-* 2. generate virtual network per tenant
-  * 2-1. generate vncreation script    
+* Generate virtual network per tenant
+  * Generate vncreation script    
   ```
   1) linear VN topology
   cd Meteor/vnCreation/linear
@@ -130,7 +130,7 @@ if success, you can find *Success to start Meteor!!*
    2-1) 2-pod topology: t<tenantID>.sh 
    2-2) full-pod topology: fullpod_t<tenantID>.sh
   ```
-  * 2-1. create vn    
+  * Create vn    
   ```
   1) linear VN topology: `sudo sh total_<tenantNum>_<VNnodeNum>.sh $IP_address`
   2) fattree VN topology: `sudo sh t<tenantID>.sh  $IP_address` or `sudo sh fullpod_t<tenantID>.sh  $IP_address`
