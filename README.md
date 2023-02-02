@@ -15,7 +15,7 @@ The repository contains as follows:
 * `SDN controller` contains executing SDN controller(ONOS) script code, `onos.sh`
 * `Meteor` contains Java Maven project for Meteor implementation 
    * `Meteor/Meteorstart.sh` for starting Meteor network hypervisor
-   * `Meteor/MeteorPredictor/` for training and inferencing control traffic   
+   * `Meteor/MeteorPredictor/` for inferencing control traffic   
 
 Below you will find instructions on how to use the tools provided in this repository to either reproduce our findings or profile your own setup to explore it's characteristics.
 
