@@ -43,6 +43,7 @@ The repository contains as follows:
 ### 3. *Meteor*
 * Prerequisite
   * install mvn (maven)
+  * build Meteor mvn project
 * Version check
   * OS: Linux ununtu 18.04 or higher
 ### 4. Network configuration
