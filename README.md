@@ -28,14 +28,14 @@ The repository contains as follows:
 * Prerequisite
   * install Mininet
     `sudo apt-get install mininet`
-* Version check
+* Version 
   * OS: Linux ununtu 18.04 or higher 
-  * OVS: 2.9.0 or higher
+  * OVS: 2.9.0 or higher (`sudo ovs-ofctl --version`)
   * python: 2.7.17 or higher
   
 ### 2. SDN controller
 * Prerequisite
-* Version check
+* Version
   * OS: Linux ununtu 16.04 or higher
   * docker: 18.09.3 or higher
   
@@ -44,11 +44,11 @@ The repository contains as follows:
   * install mvn (Apache maven 3.0.5 or higher)
   * build Meteor mvn project 
   ```
-  cd Meteor
+  cd Meteor/
   sudo mvn package
   ```
-* Version check
-  * OS: Linux ununtu 14.04 or higher
+* Version
+  * OS: Linux ununtu 14.04 or higher 
   * python3: 3.6.3 or higher 
   * Java: 1.7.0 or higher
   * Apache maven: 3.0.5 or higher 
@@ -64,7 +64,7 @@ The repository contains as follows:
   ```
   sudo 
   ```
-* Version check
+* Version 
   * python
   * pytorch
 
