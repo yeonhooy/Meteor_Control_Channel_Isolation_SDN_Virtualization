@@ -140,7 +140,7 @@ if success, you can find *Success to start Meteor!!*
   
 * Check the created VN topology 
   * Meteor side
-    You can see the Meteor log, and find "xxx"
+    You can see the Meteor log, and find "StartOVXNetwork - Booted virtual network "
   * SDN controller (Tenant) side
     Access `SDN controller server IP adress`:GUI port
     GUIport is set to 1000+tenantID. For example, Tenant1's GUI port is 1000.
