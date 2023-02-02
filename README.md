@@ -19,6 +19,7 @@ The repository contains as follows:
 * `SDNcontroller/` contains executing SDN controller(ONOS) script code, `onos.sh`
 * `Meteor/` contains Java Maven project for Meteor implementation 
    * `Meteor/Meteorstart.sh` for starting Meteor network hypervisor
+   * `Meteor/vnCreation/` scripts for creating virtual network topology
    * `Meteor/MeteorPredictor/` for inferencing control traffic
 * `MeteorPredictor_training/` contains training codes and example dataset for Meteor predictor.    
 
@@ -108,6 +109,7 @@ sudo docker ps
 * Run *Meteor*
 ```
 cd Meteor/
+echo `tenants number` > config.txt 
 sudo sh run_meteor.sh
 
 if success, you can find *Success to start Meteor!!*
