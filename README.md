@@ -25,6 +25,10 @@ The repository contains as follows:
 Below you will find instructions on how to use the tools provided in this repository to either reproduce our findings or profile your own setup to explore it's characteristics.
 
 ## Server setup and environments
+### Physical network emulation
+### SDN controller
+### *Meteor*
+
 
 ## Running guide
 
