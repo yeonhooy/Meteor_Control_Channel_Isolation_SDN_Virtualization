@@ -34,7 +34,6 @@ The repository contains as follows:
   * python: 2.7.17 or higher
   
 ### 2. SDN controller
-* Prerequisite
 * Version
   * OS: Linux ununtu 16.04 or higher
   * docker: 18.09.3 or higher
@@ -77,7 +76,13 @@ These python script uses Mininet API and Mininet utilizes OVS for Openflow switc
 #### Linear topology
 ```
 sudo python linear.py
+- Linear Topology..total physical node numbers? > e.g., 16 
+- Tenant num? > e.g., 1
+- Virtual node number per tenant? > e.g., 16
+- Meteor`s IP address? > e.g., 20.0.0.2
+- Generate traffic? > Wait for the virtual network to be created; When VN created, press any key
 ```
+
 #### Fat-tree topology
 
 ### 2. Run SDN controller
