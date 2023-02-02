@@ -144,11 +144,12 @@ if success, you can find *Success to start Meteor!!*
   * SDN controller (Tenant) side
     Access `SDN controller server IP adress`:GUI port
     GUIport is set to 1000+tenantID. For example, Tenant1's GUI port is 1000.
-    * Image attach
+    * ![image](https://user-images.githubusercontent.com/17779090/216348067-68309122-8f9e-43cb-829c-b7a762379cbf.png)
+
 
 * Meteor log
   * You can find Meteor predicts Control traffic and calcualte γ, every window and per control channel (virtual switch)
-  * Meteor executes `Meteor/MeteorPredictor/inference.sh' every window
+  * Meteor executes `Meteor/MeteorPredictor/inference.sh` every window
  
 ### 4. Training Meteor predictor
 
