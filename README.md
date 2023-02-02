@@ -82,8 +82,15 @@ sudo python linear.py
 - Meteor`s IP address? > e.g., 20.0.0.2
 - Generate traffic? > Wait for the virtual network to be created; When VN created, press any key
 ```
-
 #### Fat-tree topology
+```
+sudo python linear.py
+- Fattree Topology..Number of ary? > e.g., 4
+- Tenant num? > e.g., 1
+- connection number per tenant? > e.g., 1
+- Meteor`s IP address? > e.g., 20.0.0.2
+- Generate traffic? > Wait for the virtual network to be created; When VN created, press any key
+```
 
 ### 2. Run SDN controller
 
