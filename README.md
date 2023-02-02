@@ -44,10 +44,18 @@ The repository contains as follows:
 ### 3. *Meteor*
 * Prerequisite
   * install mvn (Apache maven 3.0.5 or higher)
-  * build Meteor mvn project 
+  * build Meteor mvn project  
   ```
   cd Meteor/
   sudo mvn package
+  ```
+  * install libraries for *Meteor* predictor
+  ```
+  pip install numpy
+  pip install pandas
+  pip install torch
+  pip install sympy
+  pip install sklearn
   ```
 * Version
   * OS: Linux ununtu 14.04 or higher 
