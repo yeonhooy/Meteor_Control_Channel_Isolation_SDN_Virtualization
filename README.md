@@ -28,6 +28,8 @@ The repository contains as follows:
 * Prerequisite
   * install Mininet
     `sudo apt-get install mininet`
+  * install iperf3
+    `sudo apt-get install iper3`
 * Version 
   * OS: Linux ununtu 18.04 or higher 
   * OVS: 2.9.0 or higher (`sudo ovs-ofctl --version`)
@@ -71,7 +73,7 @@ The repository contains as follows:
 
 ### 1. Run physical topology
 We proivde two network topology, linear topolgoy for `PhysicalTopology/linear.py` and fattree topology for `PhysicalTopology/fattree.py`
-These python script uses Mininet API and Mininet utilizes OVS for Openflow switch.
+These python script uses Mininet API and Mininet utilizes OVS for Openflow switch. We generate traffic using `iperf3` tool. You can check the result and log of iperf3 at `/PhysicalTopology/iperfResult`
 
 #### Linear topology
 ```
