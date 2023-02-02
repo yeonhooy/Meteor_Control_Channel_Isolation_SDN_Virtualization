@@ -27,27 +27,37 @@ The repository contains as follows:
 ### 1. Physical network emulation
 * Prerequisite
   * install Mininet
-    `sudo apt-get install Mininet`
-  * install python
-    `sudo apt-get install python`
+    `sudo apt-get install mininet`
 * Version check
-  * OS: Linux ununtu 18.04 or higher
-  * Kernel: 
-  * OVS: 
+  * OS: Linux ununtu 18.04 or higher 
+  * OVS: 2.9.0 or higher
+  * python: 2.7.17 or higher
+  
 ### 2. SDN controller
 * Prerequisite
-  * install ONOS
-    `ONOS `
 * Version check
-  * OS: Linux ununtu 18.04 or higher
+  * OS: Linux ununtu 16.04 or higher
+  * docker: 18.09.3 or higher
+  
 ### 3. *Meteor*
 * Prerequisite
-  * install mvn (maven)
-  * build Meteor mvn project
+  * install mvn (Apache maven 3.0.5 or higher)
+  * build Meteor mvn project 
+  ```
+  cd Meteor
+  sudo mvn package
+  ```
 * Version check
-  * OS: Linux ununtu 18.04 or higher
+  * OS: Linux ununtu 14.04 or higher
+  * python3: 3.6.3 or higher 
+  * Java: 1.7.0 or higher
+  * Apache maven: 3.0.5 or higher 
+  
 ### 4. Network configuration
-* 
+* connection between Physcial network server <-> Meteor (`ping` test)
+* connection between SDN controller server <-> Meteor (`ping ` test)
+* Ip address of three servers will be used in [later](#Running-guide)
+
 ### 5. *Meteor* predictor
 * Prerequisite
 * Version check
