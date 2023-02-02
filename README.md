@@ -5,7 +5,7 @@ Meteor: Network hypervisior providing control channel isolation with control tra
 
 We provide *Meteor* soruce code, which is a network hypervisor based on Libera for SDN virualization. 
 
-We provide all of source codes of implementation and scripts that can be used to run whole of SDN virtualization system with our Metoer network hypervisor and also provide training/infernce code for *Meteor* predicor, which is a machine learning model for control traffic prediction. 
+We provide all of source codes of implementation and scripts that can be used to run whole of SDN virtualization system with our *Meteor* network hypervisor and also provide training/infernce code for *Meteor* predicor, which is a machine learning model for control traffic prediction. 
 * [Section 1](#organisation) describes the organisation of the repository. 
 * [Section 2](#setup-servers) contains the steps required to setup the servers to perform profiling. This involves patching and installing an appproriate kernel, installing additional tools like `perf`, and configuring the NIC which one would like to use for the profiling. 
 * [Section 3](#running-an-experiment) gives a general overview of how to use our evaluation scripts. 
