@@ -75,7 +75,7 @@ The repository contains as follows:
 We proivde two network topology, linear topolgoy for `PhysicalTopology/linear.py` and fattree topology for `PhysicalTopology/fattree.py`
 These python script uses Mininet API and Mininet utilizes OVS for Openflow switch. We generate traffic using `iperf3` tool. You can check the result and log of iperf3 at `/PhysicalTopology/iperfResult`
 
-#### Linear topology
+* Linear topology
 ```
 sudo python linear.py
 - Linear Topology..total physical node numbers? > e.g., 16 
@@ -84,7 +84,7 @@ sudo python linear.py
 - Meteor`s IP address? > e.g., 20.0.0.2
 - Generate traffic? > Wait for the virtual network to be created; When VN created, press any key
 ```
-#### Fat-tree topology
+* Fat-tree topology
 ```
 sudo python linear.py
 - Fattree Topology..Number of ary? > e.g., 4
@@ -95,12 +95,21 @@ sudo python linear.py
 ```
 
 ### 2. Run SDN controller
+* Run ONOS controller (run docker container)
 ```
 sudo sh onos.sh -t <total tenant number> -i <SDN controller server IP address> 
+```
+* check ONOS controller status
+```
+sudo docker ps 
 ```
 
 ### 3. Run *Meteor* network hypervisor
 ### run *Meteor*
+```
+cd Meteor/
+sudo sh run_meteor.sh
+```
 ### generate virtual network per tenant
 
 ### 4. Training Meteor predictor
