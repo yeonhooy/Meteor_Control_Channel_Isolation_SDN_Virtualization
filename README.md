@@ -1,6 +1,8 @@
 # Control-Channel-Isolation-in-SDN-Virutalization
-This repository contains the implementation of *Meteor*, a network hypervisor for control channel isolation with control traffic prediction.
+[![DOI](https://zenodo.org/badge/594984714.svg)](https://zenodo.org/badge/latestdoi/594984714)
 
+
+This repository contains the implementation of *Meteor*, a network hypervisor for control channel isolation with control traffic prediction.
 *Meteor* deploys LSTM-autoencoder for control channel isolation, and please refer to our paper for more details.
 
 ## Overview
