@@ -83,7 +83,7 @@ The repository contains as follows:
 
 ### 1. Run physical topology
 We proivde two network topology, linear topolgoy for `PhysicalTopology/linear.py` and fattree topology for `PhysicalTopology/fattree.py`
-These python script uses Mininet API and Mininet utilizes OVS for Openflow switch. We generate traffic using `iperf3` tool. You can check the result and log of iperf3 at `/PhysicalTopology/iperfResult`
+These python scripts use Mininet API and Mininet utilizes OVS for Openflow switch. We generate traffic using `iperf3` tool. You can check the result and log of iperf3 at `/PhysicalTopology/iperfResult`
 
 * Linear topology
 ```
@@ -92,7 +92,7 @@ sudo python linear.py
 - Tenant num? > e.g., 1
 - Virtual node number per tenant? > e.g., 16
 - Meteor`s IP address? > e.g., 20.0.0.2
-- Generate traffic? > Wait for the virtual network to be created; When VN created, press any key
+- Generate traffic? > Wait for the virtual network to be created; When VN created, press any key to generate traffic
 ```
 * Fat-tree topology
 ```
@@ -101,7 +101,7 @@ sudo python linear.py
 - Tenant num? > e.g., 1
 - connection number per tenant? > e.g., 1
 - Meteor`s IP address? > e.g., 20.0.0.2
-- Generate traffic? > Wait for the virtual network to be created; When VN created, press any key
+- Generate traffic? > Wait for the virtual network to be created; When VN created, press any key to generate traffic
 ```
 
 ### 2. Run SDN controller
@@ -123,6 +123,10 @@ sudo sh run_meteor.sh
 
 if success, you can find *Success to start Meteor!!*
 ```
+![image](https://user-images.githubusercontent.com/17779090/216503110-fd1f1c34-ce73-4e3b-8ff8-e07e93411505.png)
+
+
+
 * Generate virtual network per tenant
   * Generate vncreation script    
   ```
