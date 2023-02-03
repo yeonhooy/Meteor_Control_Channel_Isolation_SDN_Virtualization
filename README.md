@@ -73,9 +73,6 @@ The repository contains as follows:
 * Prerequisite
   * install libraries with `conda`
 
-* Version 
-  * python
-  * pytorch
 * Python packages (install with conda)
 The dependencies and requirements of our conda setting are given in "MeteorPredictor_training/meteor_training_requirement.txt". You can set a similar conda environment through the following command.
 ```
