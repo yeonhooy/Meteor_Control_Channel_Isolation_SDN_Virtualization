@@ -21,7 +21,8 @@ The repository contains as follows:
    * `Meteor/vnCreation/` scripts for creating virtual network topology
    * `Meteor/MeteorPredictor/` for inferencing control traffic
    * `Meteor/MeteorPredictor/model/meterPredictor.pt` for our pre-trained model
-* `MeteorPredictor_training/` contains training codes and example dataset for Meteor predictor.    
+* `MeteorPredictor_training/` contains training codes and example dataset for Meteor predictor.
+  * Meteor predictor is implemented by [LSTM-Autoencoder](https://github.com/lkulowski/LSTM_encoder_decoder)
 
 
 ## Server setup and environments
