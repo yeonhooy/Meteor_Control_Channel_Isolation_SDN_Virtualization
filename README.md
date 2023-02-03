@@ -185,7 +185,8 @@ These python scripts use Mininet API, and Mininet utilizes Open vSwitches for SD
   ```
   cd MeteorPredictor_training
   sudo python meteor_train.py --help  
-  sudo python meteor_train.py --dataset dataset/control_traffic_dataset.csv --model model/meteorpredictor.pt --io 20 --wo 20
+  sudo python meteor_train.py --dataset dataset/control_traffic_dataset.csv --model model/meteorPredictor.pt --io 20 --wo 20
+  cp model/meteorPredictor.pt ../Meteor/MeteorPredictor/model/meterPredictor.pt
   ```
 
 
