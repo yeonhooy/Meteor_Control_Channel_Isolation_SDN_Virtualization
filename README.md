@@ -1,4 +1,4 @@
-# Meteor
+# Meteor (Control Channel Isolation in SDN Virtualization)
 [![DOI](https://zenodo.org/badge/594984714.svg)](https://zenodo.org/badge/latestdoi/594984714)
 
 
