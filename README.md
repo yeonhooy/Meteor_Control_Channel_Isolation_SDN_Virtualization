@@ -9,7 +9,6 @@ We provide all of source codes of implementation and scripts that can be used to
 * [Section 1](#Repository-organization) describes the organization of the repository. 
 * [Section 2](#Server-setup-and-environments) contains the steps required to setup the servers to run each components; Physical topology, SDN controller, Meteor. Also, it contains the environments for *Meteor* predicor  
 * [Section 3](#Running-guide) gives a general overview of how to use our evaluation scripts. 
-* (Optional) [Section 4](#Evaluation) Instructions to reproduce the results from our CCgrid 2023 paper.
 
 ## Repository organization 
 
@@ -179,6 +178,11 @@ if success, you can find *Success to start Meteor!!*
  
 ### 4. Training Meteor predictor
 
-## Evaluation
+```
+cd MeteorPredictor_training
+sudo python meteor_train.py --help  
+sudo python meteor_train.py --dataset dataset/control_traffic_dataset.csv --model model/meteorpredictor.pt --io 20 --wo 20
+```
+
 
 
