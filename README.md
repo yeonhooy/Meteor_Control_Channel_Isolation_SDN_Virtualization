@@ -72,9 +72,7 @@ The repository contains as follows:
 ### 5. *Meteor* predictor
 * Prerequisite
   * install libraries with `conda`
-  ```
-  sudo 
-  ```
+
 * Version 
   * python
   * pytorch
