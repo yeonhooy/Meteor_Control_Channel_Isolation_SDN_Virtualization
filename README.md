@@ -8,7 +8,7 @@ We provide *Meteor* soruce code, which is a network hypervisor based on Libera f
 We provide all of source codes of implementation and scripts that can be used to run whole of SDN virtualization system with our *Meteor* network hypervisor and also provide training/infernce code for *Meteor* predicor, which is a machine learning model for control traffic prediction. 
 * [Section 1](#Repository-organization) describes the organization of the repository. 
 * [Section 2](#Server-setup-and-environments) contains the steps required to setup the servers to run each components; Physical topology, SDN controller, Meteor. Also, it contains the environments for *Meteor* predicor  
-* [Section 3](#Running-guide) gives a general overview of how to use our evaluation scripts. 
+* [Section 3](#Running-guide) gives a general guide of how to use our codes. 
 
 ## Repository organization 
 
