@@ -148,7 +148,7 @@ These python scripts use Mininet API, and Mininet utilizes Open vSwitches for SD
     * Virtual network topology of tree example
       ```
       cd fattree/
-      For fattree, We provide pre-created script for two types of VN topology / image attach
+      For fattree, We provide pre-created scripts for two types of VN topology / image attach
       In this scirpts, we support up to eight tenants. Also, we only create one host pair in one VN. If you need, you can modify code freely.
       2-1) 2-pod topology: t<tenantID>.sh 
       2-2) full-pod topology: fullpod_t<tenantID>.sh
