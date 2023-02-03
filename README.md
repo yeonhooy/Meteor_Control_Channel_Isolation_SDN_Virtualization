@@ -31,7 +31,7 @@ The repository contains as follows:
   * install Mininet
     `sudo apt-get install mininet`
   * install iperf3
-    `sudo apt-get install iper3`
+    `sudo apt-get install iperf3`
 * Version 
   * OS: Linux ununtu 18.04 or higher 
   * OVS: 2.9.0 or higher (`sudo ovs-ofctl --version`)
@@ -67,7 +67,7 @@ The repository contains as follows:
 ### 4. Network configuration
 * Make communication between Physcial network server <-> Meteor (`ping` test)
 * Make communication between SDN controller server <-> Meteor (`ping ` test)
-* Ip address of three servers will be used in [later](#Running-guide)
+* IP address of three servers will be used in [later](#Running-guide)
 
 ### 5. *Meteor* predictor
 * Prerequisite
@@ -78,6 +78,12 @@ The repository contains as follows:
 * Version 
   * python
   * pytorch
+* Python packages (install with conda)
+The dependencies and requirements of our conda setting are given in "MeteorPredictor_training/meteor_training_requirement.txt". You can set a similar conda environment through the following command.
+```
+conda install -n <env_name> meteor_training_requirement.txt
+```
+
 
 ## Running guide
 
