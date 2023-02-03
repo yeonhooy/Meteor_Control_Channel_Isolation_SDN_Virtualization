@@ -109,7 +109,7 @@ public final class OpenVirteX {
         System.out.println(callCmd);
         RoleManager.readNumTenants();
         
-        OpenVirteX.log.info("******* Suceess to start Meteror!! *******");
+        OpenVirteX.log.info("******* Success to start Meteor!! *******");
         ctrl.run();
     }
 
