@@ -1,5 +1,22 @@
 # Author: Laura Kulowski
 
+'''
+#MIT License
+#
+#Copyright (c) 2020 Laura Kulowski
+#
+#Permission is hereby granted, free of charge, to any person obtaining a copy
+#of this software and associated documentation files (the "Software"), to deal
+#in the Software without restriction, including without limitation the rights
+#to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+#copies of the Software, and to permit persons to whom the Software is
+#furnished to do so, subject to the following conditions:
+#
+#The above copyright notice and this permission notice shall be included in all
+#copies or substantial portions of the Software.
+#
+'''
+
 import numpy as np
 import random
 import os, errno
@@ -109,7 +126,6 @@ class lstm_decoder(nn.Module):
 # early stop
 
 class EarlyStopping:
-    """주어진 patience 이후로 validation loss가 개선되지 않으면 학습을 조기 중지"""
     def __init__(self, patience=7, verbose=False, delta=0, path='checkpoint.pt'):
         """
         Args:
@@ -149,7 +165,6 @@ class EarlyStopping:
             self.counter = 0
 
     def save_checkpoint(self, val_loss, model):
-        '''validation loss가 감소하면 모델을 저장한다.'''
         if self.verbose:
             print(f'Validation loss decreased ({self.val_loss_min:.6f} --> {val_loss:.6f}).  Saving model ...')
         torch.save(model.state_dict(), self.path)
