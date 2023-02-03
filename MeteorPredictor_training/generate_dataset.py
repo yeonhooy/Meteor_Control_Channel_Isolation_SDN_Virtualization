@@ -36,17 +36,9 @@ def synthetic_data(Nt = 2000, tf = 80 * np.pi):
     : return t, y:    time, feature arrays
     '''
 
-    # linespace : 1차원 배열 만드는 함수, 그래프에서 수평축의 간격 만들기등에 매우 편리 linespace(start, stop, num)
-    # start : 배열의 시작값, stop : 배열의 끝값, num: start와 stop 사이를 몇개의 일정한 간격으로 만들지 정함. default : 50개
     t = np.linspace(0., tf, Nt)
     y = np.sin(2. * t) + 0.5 * np.cos(t) + np.random.normal(0., 0.2, Nt)
 
-    print(t)
-    print(len(t))
-    print("____________________________")
-    print(y)
-    print(len(y))
-    #input("dd")
     return t, y
 
 def train_test_split(t, y, split = 0.8):
@@ -97,13 +89,8 @@ def windowed_dataset(y, input_window = 20, output_window = 20, stride = 20, num_
     '''
   
     L = y.shape[0]
-    print("L")
-    #input(L)
+    
     num_samples = (L - input_window - output_window) // stride + 1
-    print("numsample")
-    print(num_samples,L,input_window,output_window,stride)
-
-    print(input_window,num_samples,num_features)
     X = np.zeros([input_window, num_samples, num_features])
     print(output_window, num_samples, num_features)
     Y = np.zeros([output_window, num_samples, num_features])    
@@ -119,7 +106,6 @@ def windowed_dataset(y, input_window = 20, output_window = 20, stride = 20, num_
             Y[:, ii, ff] = y[start_y:end_y, ff]
 
     print(X.shape, Y.shape)
-    #input("33")
     return X, Y
 
 
