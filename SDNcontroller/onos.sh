@@ -96,6 +96,7 @@ do
 	# Activate fwd, openflow
 	curl -sS --user karaf:karaf -X POST http://$onos_ip:8181/onos/v1/applications/org.onosproject.fwd/active
 	curl -sS --user karaf:karaf -X POST http://$onos_ip:8181/onos/v1/applications/org.onosproject.openflow/active
+	curl -sS --user karaf:karaf -X POST http://$onos_ip:8181/onos/v1/applications/org.onosproject.provider/active
 
 	# Set options of apps
 	curl -sS --user karaf:karaf -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$onos_ip:8181/onos/v1/configuration/org.onosproject.net.flow.impl.FlowRuleManager -d '{ "fallbackFlowPollFrequency": "3000",  "allowExtraneousRules": "true"}'
@@ -106,6 +107,6 @@ do
 		curl -sS --user karaf:karaf -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$onos_ip:8181/onos/v1/configuration/org.onosproject.fwd.ReactiveForwarding -d '{ "matchTcpUdpPorts": "false", "matchIpv4Address": "true", "flowTimeout": "500000"}'
 	fi
 		curl -sS --user karaf:karaf -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$onos_ip:8181/onos/v1/configuration/org.onosproject.provider.lldp.impl.LldpLinkProvider -d '{ "probeRate": "6000", "staleLinkAge": "1000000"}'
-		curl -sS --user karaf:karaf -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$onos_ip:8181/onos/v1/configuration/org.onosproject.provider.of.device.impl.OpenFlowDeviceProvider -d '{ "portStatsPollFrequency": "1000",  "flowStatsPollFrequency": "1000"}'
+		curl -sS --user karaf:karaf -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$onos_ip:8181/onos/v1/configuration/org.onosproject.provider.of.device.impl.OpenFlowDeviceProvider -d '{ "portStatsPollFrequency": "1",  "flowStatsPollFrequency": "1"}'
 done
 
