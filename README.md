@@ -173,6 +173,7 @@ These python scripts use Mininet API, and Mininet utilizes Open vSwitches for SD
   * The address of the SDN controller is http://'server IP address':GUI_port.
     * The GUI_port is set as 1000 + virtual network ID.
     * For example, the GUI_port of the first virtual network is 1000 (1000 + 0).
+  * Login ID: karaf / PW: karaf
 
   ![image](https://user-images.githubusercontent.com/17779090/216348067-68309122-8f9e-43cb-829c-b7a762379cbf.png)
 
