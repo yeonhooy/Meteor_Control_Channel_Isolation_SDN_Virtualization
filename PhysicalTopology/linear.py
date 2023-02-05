@@ -163,8 +163,8 @@ if __name__ == '__main__':
         for j in range(0, 1):
             port = port + 1
             print("Generate Traffic bewteen %s and %s using port(%s)" % (c1.params['ip'], s1.params['ip'], port))
-            result1 = c1.cmd("iperf -s -1 -p %s > iperfResult/host_%s_1.txt &" % (port, te))
-            result2 = s1.cmd("iperf -c %s -p %s -n 1 -l 100 > iperfResult/host_%s_2.txt &" % (c1.params['ip'], port, te))
+            result1 = c1.cmd("iperf3 -s -1 -p %s > iperfResult/host_%s_1.txt &" % (port, te))
+            result2 = s1.cmd("iperf3 -c %s -p %s -n 1 -l 100 > iperfResult/host_%s_2.txt &" % (c1.params['ip'], port, te))
             print("traffic connection %s/%s" % (j+1, 128))
 
     CLI(net)
