@@ -301,8 +301,8 @@ if __name__ == '__main__':
 
             pport = pport + 1
             print("Generate Traffic bewteen %s and %s using port(%s)" % (c1.params['ip'], s1.params['ip'], pport))
-            result1 = c1.cmd("iperf -s -1 -p %s > iperfResult/host_%s_1.txt &" % (pport, te))
-            result2 = s1.cmd("iperf -c %s -p %s -n 1 -l 100 > iperfResult/host_%s_2.txt &" % (c1.params['ip'], pport, te))
+            result1 = c1.cmd("iperf3 -s -1 -p %s > iperfResult/host_%s_1.txt &" % (pport, te))
+            result2 = s1.cmd("iperf3 -c %s -p %s -n 1 -l 100 > iperfResult/host_%s_2.txt &" % (c1.params['ip'], pport, te))
 
 
     for i in range(1,120):
