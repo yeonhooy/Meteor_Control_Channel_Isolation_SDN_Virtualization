@@ -1,0 +1,32 @@
+Starting Meteor...
+2023-02-08 19:48:24,258 DEBUG Generated plugins in 0.000024662 seconds
+2023-02-08 19:48:24,261 DEBUG Found Plugin Map at jar:file:/home/ovx/Meteor_Control_Channel_Isolation_SDN_Virtualization/Meteor/target/OpenVirteX.jar!/org/apache/logging/log4j/core/config/plugins/Log4j2Plugins.dat
+2023-02-08 19:48:25,193 DEBUG Generated plugins in 0.934084943 seconds
+2023-02-08 19:48:25,925 DEBUG Generated plugins in 0.730362602 seconds
+2023-02-08 19:48:25,930 DEBUG Calling createLayout on class org.apache.logging.log4j.core.layout.PatternLayout for element PatternLayout with params(pattern="%d{HH:mm:ss.SSS} [%t] %-5level %logger{1} - %msg%n", Configuration(/home/ovx/Meteor_Control_Channel_Isolation_SDN_Virtualization/Meteor/scripts/../config/log4j2.xml), null, charset="null", alwaysWriteExceptions="null", noConsoleNoAnsi="null")
+2023-02-08 19:48:26,643 DEBUG Generated plugins in 0.712021734 seconds
+2023-02-08 19:48:26,645 DEBUG Calling createAppender on class org.apache.logging.log4j.core.appender.ConsoleAppender for element Console with params(PatternLayout(%d{HH:mm:ss.SSS} [%t] %-5level %logger{1} - %msg%n), null, target="SYSTEM_OUT", name="Console", follow="null", ignoreExceptions="null")
+2023-02-08 19:48:26,645 DEBUG Calling createAppenders on class org.apache.logging.log4j.core.config.plugins.AppendersPlugin for element appenders with params(Appenders={Console})
+2023-02-08 19:48:26,646 DEBUG Calling createAppenderRef on class org.apache.logging.log4j.core.config.AppenderRef for element appender-ref with params(ref="Console", level="null", null)
+2023-02-08 19:48:26,646 DEBUG Calling createAppenderRef on class org.apache.logging.log4j.core.config.AppenderRef for element appender-ref with params(ref="File", level="null", null)
+2023-02-08 19:48:26,647 DEBUG Calling createLogger on class org.apache.logging.log4j.core.config.LoggerConfig$RootLogger for element root with params(additivity="null", level="INFO", includeLocation="false", AppenderRef={Console, File}, Properties={}, Configuration(/home/ovx/Meteor_Control_Channel_Isolation_SDN_Virtualization/Meteor/scripts/../config/log4j2.xml), null)
+2023-02-08 19:48:26,647 DEBUG Calling createLoggers on class org.apache.logging.log4j.core.config.plugins.LoggersPlugin for element loggers with params(Loggers={root})
+2023-02-08 19:48:26,648 ERROR Unable to locate appender File for logger 
+2023-02-08 19:48:26,763 DEBUG Registering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@65f9c5c8
+2023-02-08 19:48:26,766 DEBUG Registering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@65f9c5c8,component=StatusLogger
+2023-02-08 19:48:26,767 DEBUG Registering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@65f9c5c8,component=ContextSelector
+2023-02-08 19:48:26,768 DEBUG Registering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@65f9c5c8,component=Loggers,name=
+2023-02-08 19:48:26,769 DEBUG Registering MBean org.apache.logging.log4j2:type=sun.misc.Launcher$AppClassLoader@65f9c5c8,component=Appenders,name=Console
+2023-02-08 19:48:26,770 DEBUG Reconfiguration completed
+19:48:26.971 [main] INFO  OpenVirteX - now directory /home/ovx/Meteor_Control_Channel_Isolation_SDN_Virtualization/Meteor
+[Ljava.lang.String;@19163ae3
+19:48:26.987 [main] INFO  RoleManager - runDynamicNumTenants: 1
+19:48:26.987 [main] INFO  RoleManager - NumTenants: 1
+19:48:26.987 [main] INFO  OpenVirteX - ******* Success to start Meteor!! *******
+19:48:26.987 [main] INFO  PhysicalNetwork - Starting network discovery...
+19:48:26.990 [main] INFO  MongoConnection - Connecting to MongoDB at 127.0.0.1:27017
+19:48:27.120 [main] ERROR MongoConnection - Error connecting to database
+19:48:27.183 [main] INFO  JettyServer - Initializing API WebServer on port 8080
+19:48:27.231 [Thread-4] INFO  Server - jetty-9.0.z-SNAPSHOT
+19:48:27.282 [Thread-4] INFO  ServerConnector - Started ServerConnector@4c6ca594{HTTP/1.1}{0.0.0.0:8080}
+19:48:27.637 [Thread-4] INFO  ServerConnector - Started ServerConnector@1592e849{SSL-http/1.1}{0.0.0.0:8443}
