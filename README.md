@@ -52,6 +52,7 @@ The repository is organized as follows:
 ### 3. *Meteor*
 * Prerequisite
   * Install mvn (Apache maven 3.0.5 or higher)
+    `sudo apt-get install maven`
   * Build Meteor project
     ```
     cd Meteor/
@@ -59,12 +60,15 @@ The repository is organized as follows:
     ```
   * Install libraries required for *Meteor* predictor
     ```
+    sudo apt-get install python-pip
     pip install numpy
     pip install pandas
     pip install torch
     pip install sympy
     pip install sklearn
     ```
+   * PyTorch version must be 1.10.1 if using our pre-trained model
+   
 * oftware versions 
   * OS: Linux ununtu 14.04 or higher 
   * python3: 3.6.3 or higher 
@@ -94,26 +98,23 @@ We provide two physical network topologies, linear topology (`PhysicalTopology/l
 These python scripts use Mininet API, and Mininet utilizes Open vSwitches for SDN switch emulation. We generate traffic using `iperf3`. You can check the result and log of iperf3 at `/PhysicalTopology/iperfResult`
 
 * Linear topology example
+  `sudo python linear.py -n 20 -t 1 -v 10 -i 20.0.0.1`
   ```
-  sudo python linear.py
-  - Linear Topology..total physical node numbers? > e.g., 16 
-  - Tenant num? > e.g., 1
-  - Virtual node number per tenant? > e.g., 16
-  - Meteor`s IP address? > e.g., 20.0.0.2
+  sudo python linear.py --help
+  sudo python linear.py -n <node number> -t <tenant number> -v <vnode number> -i <Meteor IP address>
   - Generate traffic? > Wait for the virtual network to be created; When VN created, press any key to generate traffic
   ```
 * Fat-tree topology example
+  `sudo python fattree.py -a 4 -t 1 -c 1 -i 20.0.0.1`
   ```
-  sudo python linear.py
-  - Fattree Topology..Number of ary? > e.g., 4
-  - Tenant num? > e.g., 1
-  - connection number per tenant? > e.g., 1
-  - Meteor`s IP address? > e.g., 20.0.0.2
+  sudo python fattree.py --help
+  sudo python fattree.py -a <array of fattree> -t <tenant number> -c <connection number per tenant> -i <Meteor IP address>
   - Generate traffic? > Wait for the virtual network to be created; When VN created, press any key to generate traffic
   ```
 
 ### 2. Run SDN controller
 * Run ONOS controller by a Docker container
+  `sudo sh onos.sh -t 1 -i 20.0.0.3`
   ```
   sudo sh onos.sh -t <total tenant number> -i <SDN controller server IP address> 
   ```
@@ -138,12 +139,10 @@ These python scripts use Mininet API, and Mininet utilizes Open vSwitches for SD
 * Generate virtual network per tenant
   * Automatic generation of virtual network topology scripts 
     * Virtual network topology of linear example
+      `python vncreation_linear.py -t 1 -v 10 -i 20.0.0.3`
       ```
       cd Meteor/vnCreation/linear
-      python vncreation_linear.py
-      - Total tenant num? > 
-      - VN`s node number? >
-      - Tenant (SDN controller)`s Ip address? > 
+      python vncreation_linear.py -t <tenant num> -v <virtual switch  num> -i <SDN controller IP address>
       Output: total_<tenantNum>_<VNnodeNum>.sh
 
       ```
@@ -172,8 +171,8 @@ These python scripts use Mininet API, and Mininet utilizes Open vSwitches for SD
   * From the SDN controller side, access the SDN controller via web browser.
   * The address of the SDN controller is http://'server IP address':GUI_port.
     * The GUI_port is set as 1000 + virtual network ID.
-    * For example, the GUI_port of the first virtual network is 1000 (1000 + 0).
-  * Login ID: karaf / PW: karaf
+    * For example, the GUI_port of the first virtual network is 2000 (2000 + 0).
+  * ONOS controller`s GUI address: <SDNcontrollerIPadress:GUI_port/onos/ui> Login ID: karaf / PW: karaf
 
   ![image](https://user-images.githubusercontent.com/17779090/216348067-68309122-8f9e-43cb-829c-b7a762379cbf.png)
 
