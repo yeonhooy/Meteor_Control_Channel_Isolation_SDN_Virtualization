@@ -84,7 +84,7 @@ public class OVXFlowMod extends OVXMessage implements Devirtualizable {
 
       //    Drop LLDP-matching messages sent by some applications 
         if (this.getFlowMod().getMatch().get(MatchField.ETH_TYPE) == EthType.LLDP) {
-            this.log.info("LLDP>>> {}/{}  LLDP",sw.getSwitchName(), sw.getTenantId());
+            //this.log.info("LLDP>>> {}/{}  LLDP",sw.getSwitchName(), sw.getTenantId());
         	return;
         }
         
@@ -144,12 +144,12 @@ public class OVXFlowMod extends OVXMessage implements Devirtualizable {
                 sw.sendMsg(OVXMessageUtil.makeError(e.getErrorCode(), this), sw);
                 return;
             } catch (final DroppedMessageException e) {
-                this.log.info("Dropping ovxFlowMod {} /{}", this.getOFMessage().toString(), e);
+                //this.log.info("Dropping ovxFlowMod {} /{}", this.getOFMessage().toString(), e);
                // ft.deleteFlowMod(ovxCookie);
                 // TODO perhaps send error message to controller
                 return;
             } catch (final NullPointerException e) {
-               this.log.info("Action {} could not be supported", act);
+               //this.log.info("Action {} could not be supported", act);
                 return;
             }
         }
@@ -345,8 +345,8 @@ public class OVXFlowMod extends OVXMessage implements Devirtualizable {
             	//log finish time
             	OVXFlowMod.finish_times[this.sw.getTenantId()][swDec] =finish;
                 
-            	log.info("FlowModTime> {} {} {} {} {} {} {}",
-            			this.sw.getTenantId(),swDec,counts,times,timeElapsed,this.start_time,finish);
+            	//log.info("FlowModTime> {} {} {} {} {} {} {}",
+            			//this.sw.getTenantId(),swDec,counts,times,timeElapsed,this.start_time,finish);
             	
 //            	log.info("FlowModTime> TId : {} , SW : {}-- Times: {} ({}) / N:({}) = average=> {} endtime: [ {} / {} ] ",
 //            			this.sw.getTenantId(),swDec,times,timeElapsed,counts,averaged,this.start_time,finish);
