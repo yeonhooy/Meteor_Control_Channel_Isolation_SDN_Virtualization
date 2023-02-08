@@ -14,6 +14,7 @@ from mininet.clean import cleanup
 import logging
 from functools import partial
 import time
+import argparse
 
 global bw_core_aggr, bw_aggr_edge
 logger = logging.getLogger(__name__)
@@ -248,18 +249,25 @@ def startpings( host, targetips ):
 
 if __name__ == '__main__':
     setLogLevel('info')
-    prompt = "Fattree Topology.. Number of ary? (ex. 4)"
-    k = raw_input(prompt)
+    
+    parser = argparse.ArgumentParser(description='Linear physical topology')
+    parser.add_argument('--ary', '-a', help='array number of fattree')
+    parser.add_argument('--tenant','-t', help='tenant num')
+    parser.add_argument('--conn', '-c', help='virtual node number per tenant')
+    parser.add_argument('--ip', '-i', help='Meteor`s IP address')
+    args = parser.parse_args()
+    
+    k = args.ary
     k = int(k)
 
-    prompt = "tenant num? "
-    t = input(prompt)
+    t = args.tenant
     t = int(t)
 
-    cnum = raw_input("Connection Number per tenant? ")
+    cnum = args.conn
     cnum = int(cnum)
     
-    ip = raw_input("Meteor`s IP address? ")
+    ip = args.ip
+
     port = 6633
     
     capa = 100
