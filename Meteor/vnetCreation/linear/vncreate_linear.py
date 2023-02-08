@@ -1,16 +1,20 @@
+import argparse
 
 if __name__ == '__main__':
-    print("Create VN script file")
-    prompt = "Total Tenant num?"
-    totalVN = input(prompt)
+
+    parser = argparse.ArgumentParser(description='Trainig Meteor')
+    parser.add_argument('--tenantnum', '-t', help='Total Tenant num?')
+    parser.add_argument('--vnode','-v', help='"VN`s node number?"')
+    parser.add_argument('--ip', '-i', help='Tenant(SDN controller)`s IP address?')
+    args = parser.parse_args()
+    
+    totalVN = args.tenantnum
     totalVN = int(totalVN)
 
-    prompt = "VN`s node number?"
-    node = input(prompt)
+    node = args.vnode
     node = int(node)
-    
-    prompt = "Tenant(SDN controller)`s IP address? "
-    adressIP = input(prompt)
+
+    adressIP = args.ip
 
     for a in range(0,totalVN):
         vnum = a+1
