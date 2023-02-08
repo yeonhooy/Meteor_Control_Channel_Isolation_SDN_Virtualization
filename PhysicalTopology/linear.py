@@ -14,6 +14,7 @@ from mininet.clean import cleanup
 import logging
 from functools import partial
 import time
+import argparse
 
 global bw_core_aggr, bw_aggr_edge
 logger = logging.getLogger(__name__)
@@ -113,18 +114,24 @@ class LinearTraffic(Topo):
 
 if __name__ == '__main__':
     setLogLevel('info')
-    prompt = "Linear Topology..total physical node numbers? "
-    k = raw_input(prompt)
+    
+    parser = argparse.ArgumentParser(description='Linear physical topology')
+    parser.add_argument('--node', '-n', help='total physical node number')
+    parser.add_argument('--tenant','-t', help='tenant num')
+    parser.add_argument('--vnode', '-v', help='virtual node number per tenant')
+    parser.add_argument('--ip', '-i', help='Meteor`s IP address')
+    args = parser.parse_args()
+    
+    k = args.node
     k = int(k)
 
-    prompt = "tenant num? "
-    t = input(prompt)
+    t = args.tenant
     t = int(t)
 
-    dn = raw_input("virtual node number per tenant? ")
+    dn = args.vnode
     dn = int(dn)
     
-    ip = raw_input("Meteor`s IP address? ")
+    ip = args.ip
     #ip = '20.0.0.2'
     port = 6633
 
