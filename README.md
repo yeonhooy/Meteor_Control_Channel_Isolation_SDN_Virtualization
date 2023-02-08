@@ -40,18 +40,20 @@ The repository is organized as follows:
 
     `sudo apt-get install iperf3`
 * Software versions 
+  * (No specific version dependencies, but we used) 
   * OS: Linux ununtu 18.04 or higher 
   * Open vSwitch of the Mininet: 2.9.0 or higher (`sudo ovs-ofctl --version`)
   * python: 2.7.17 or higher
   
 ### 2. SDN controller
 * Software versions 
+  * (No specific version dependencies, but we used)  
   * OS: Linux ununtu 16.04 or higher
   * Docker: 18.09.3 or higher
   
 ### 3. *Meteor*
 * Prerequisite
-  * Install mvn (Apache maven 3.0.5 or higher)
+  * Install mvn (Apache maven 3.0.5 or higher) / (No specific version dependencies, but we used)
     `sudo apt-get install maven`
   * Build Meteor project
     ```
