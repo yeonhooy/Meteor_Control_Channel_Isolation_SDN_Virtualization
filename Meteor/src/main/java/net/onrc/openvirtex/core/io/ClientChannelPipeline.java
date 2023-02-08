@@ -86,49 +86,21 @@ public class ClientChannelPipeline extends OpenflowChannelPipeline {
 		this.readTimeoutHandler = new ReadTimeoutHandler(this.timer, 30);
 		this.controllerHandler = new ControllerChannelHandler(ctrl, sw);
 
-		final String limitValue = this.readLimitValue();
-		final Integer channelimit = Integer.parseInt(limitValue);
+		//final String limitValue = this.readLimitValue();
+		//final Integer channelimit = Integer.parseInt(limitValue);
 		int tId = sw.getTenantId();
 		String swName = sw.getSwitchName().substring(21);
 		int swDec = Integer.parseInt(swName, 16);
 
 		firstThroughputLimit[tId][swDec] = 0;
-		// firstThroughputLimit[tId][swDec] = 0;
-
-		// this.clientChannelShapingHandler = new
-		// ChannelTrafficShapingHandler(timer,50*K,50*K);f
-		// this.globalChannelTrafficShapingHandler = new
-		// GlobalChannelTrafficShapingHandler(this.timer,0,0,6.9*M,6.9*M);
-		// /(global = 977MB/sec / channel 70)
-
-		// this.globalChannelTrafficShapingHandler = new
-		// GlobalChannelTrafficShapingHandler(this.timer,0,0,4000,4000);
-
-		// this.globalChannelTrafficShapingHandler = new
-		// GlobalChannelTrafficShapingHandler(this.timer,0,0,10*M,10*M);
-		// //Defualt
-
-		// this.globalChannelTrafficShapingHandler = new
-		// GlobalChannelTrafficShapingHandler(this.timer,316*K,316*K,4000,4000);
 
 		
-		// 80*K 
-		this.globalChannelTrafficShapingHandler = new GlobalChannelTrafficShapingHandler(this.timer, 0, 0,
-				8*K, 8*K);
 		
-
-		// this.trafficCounter = new
-		// TrafficCounter(this.clientChannelShapingHandler,this.timer,sw.getSwitchName(),15);
-		// this.trafficCounter =
-		// this.clientChannelShapingHandler.getTrafficCounter();
+		this.globalChannelTrafficShapingHandler = new GlobalChannelTrafficShapingHandler(this.timer, 0, 0, 0, 0);
+	
 		this.globalTrafficCounter = new GlobalChannelTrafficCounter(this.globalChannelTrafficShapingHandler, this.timer,
-				"GlobalTC", 1000); // 15
+				"GlobalTC", 1000); 
 		
-		//this.globalChannelTrafficShapingHandler.setCheckInterval(1000);
-		//Traffic shaping
-		//this.globalChannelTrafficShapingHandler.setMaxDeviation(0.1F, 0.7F, -0.7F);
-		//this.globalChannelTrafficShapingHandler.setMaxWriteDelay(0);  //y = -x + 11000
-		//this.globalChannelTrafficShapingHandler.setReadLimit(0);
 		this.globalChannelTrafficShapingHandler.setCheckInterval(100);
 		
 		
@@ -137,30 +109,20 @@ public class ClientChannelPipeline extends OpenflowChannelPipeline {
 		this.sw = sw;
 		this.cg = cg;
 		
-		//this.globalChannelTrafficShapingHandler.setCheckInterval(00);
-		
 		
 		channelcount++;
 		this.channelnum = channelcount;
 		tenantChannelnum[tId]++;
 
 		this.log.info(
-				"@@@@@@@@@@@@@@@@@@::::::::::ClientChannelPipeline({}/{}) created(chLimit: {})::::::::::::::::%%%%%%%%%%%%%%%%%%%",
-				channelcount, this.channelnum, channelimit);
+				"@@@@@@@@@@@@@@@@@@::::::::::ClientChannelPipeline({}/{}) created!:::::::::::@@@@@@@@@@@@@@@@@@",
+				channelcount, this.channelnum);
 
 	}
 
 	@Override
 	public ChannelPipeline getPipeline() throws Exception {
-		// final int M = 1024 * 1024; //M = 1MB
-		// final ControllerChannelHandler handler = new
-		// ControllerChannelHandler(this.ctrl, this.sw);
-
-		// ChannelTrafficShapingHandler channelTrafficShapingHandler = new
-		// ChannelTrafficShapingHandler(timer,5*M, M/2);
-		// TrafficCounter trafficCounter =
-		// this.clientChannelShapingHandler.getTrafficCounter();
-		// String readThroughput = trafficCounter.toString();
+		
 
 		final ChannelPipeline pipeline = Channels.pipeline();
 		
@@ -171,26 +133,19 @@ public class ClientChannelPipeline extends OpenflowChannelPipeline {
 		pipeline.addLast("timeout", this.readTimeoutHandler);
 		pipeline.addLast("handshaketimeout", new HandshakeTimeoutHandler(this.controllerHandler, this.timer, 15));
 		// Channel bandwidth
-		// pipeline.addLast("channel_Traffic_ShapingHandler",
-		// this.clientChannelShapingHandler);
+	
 		pipeline.addLast("globalchanneltrafficShapingHandler", this.globalChannelTrafficShapingHandler);
 		pipeline.addLast("pipelineExecutor", new ExecutionHandler(this.pipelineExecutor));
 		pipeline.addLast("handler", this.controllerHandler);
-		// pipeline.addLast("globalchanneltrafficShapingHandler",
-		// this.globalChannelTrafficShapingHandler);
-		// pipeline.replace(oldHandler, newName, newHandler);
-		// TrafficCounter trafficCount = makeTrafficCounter();
+		
 		int tId = this.sw.getTenantId();
 		String swName = this.sw.getSwitchName().substring(21);
 		int swDec = Integer.parseInt(swName, 16);
 		this.log.info(
-				"@@@@@@@@@@@@@@@@@@::::::::::ClientChannelPipeline.getPipeline:: created({})::::::::::::::::%%%%%%%%%%%%%%%%%%%",
+				"@@@@@@@@@@@@@@@@@@::::::::::ClientChannelPipeline.getPipeline:: created({})::::::::::::::::@@@@@@@@@@@@@@@@@@",
 				this.channelnum);
 		
 
-		// this.log.info("@@@@@@@@@@@@@@@@@@::::::::::({})::::::::::::::::%%%%%%%%%%%%%%%%%%%",channelList[tId][swDec]);
-		// this.log.info("@@@@@@@@@@@@@@@@@@::::::::::({})::::::::::::::::%%%%%%%%%%%%%%%%%%%",pipeline.getChannel());
-		// //pipeline.getContext("channel_Traffic_ShpingHandler");
 
 		return pipeline;
 	}
@@ -212,9 +167,9 @@ public class ClientChannelPipeline extends OpenflowChannelPipeline {
 	}
 
 	public String readLimitValue() {
-		// Inference DATA
-
-		String fileName = "/home/ovx/yeonhooy/Tapflow_v2/OpenVirteX/ML/chLimit.txt";
+		
+		// set path if you need this function (Meteor does not use )
+		String fileName = "path";
 
 		FileReader fileReader = null;
 
@@ -263,7 +218,7 @@ public class ClientChannelPipeline extends OpenflowChannelPipeline {
 		long writeThroughput = counter.getLastWriteThroughput();
 		// metrics.setReadThroughput(readThroughput);
 		// metrics.setWriteThroughput(writeThroughput);
-		log.info("Switch TAP interval: {}", interval);
+		log.info("Traffic meter interval: {}", interval);
 		log.info("Reads per Sec: {}", readsPerSec);
 		log.info("Writes per Sec: {}", writesPerSec);
 		log.info("Read Throughput: {}", readThroughput);
