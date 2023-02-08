@@ -54,7 +54,7 @@ The repository is organized as follows:
 ### 3. *Meteor*
 * Prerequisite
   * Install mvn (Apache maven 3.0.5 or higher) / (No specific version dependencies, but we used)
-    `sudo apt-get install maven`
+    * `sudo apt-get install maven`
   * Build Meteor project
     ```
     cd Meteor/
