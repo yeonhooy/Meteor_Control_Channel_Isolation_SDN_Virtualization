@@ -152,7 +152,7 @@ public class RoleManager implements TimerTask {
 		String line = null;
 		try {
 			while ((line = reader.readLine()) != null) {
-				log.info("line : {}", line);
+				log.info("r values calculation : {}", line);
 				limitValue = line;
 			}
 		} catch (IOException e) {
@@ -182,16 +182,16 @@ public class RoleManager implements TimerTask {
     
     	String usrdir = System.getProperty("user.dir");
         	
-    	log.info("////////loading... {}-{}-{}",this.wid,this.tid,this.maxSw);
+    	//log.info("////////loading... {}-{}-{}",this.wid,this.tid,this.maxSw);
     	String kpath = usrdir+ "/MeteorPredictor/inverseData/inverse_"+String.valueOf(this.wid)+"_"+String.valueOf(this.tid)+"_"+String.valueOf(this.maxSw)+".txt";
     	File kfile = new File(kpath);
     	BufferedReader bufferedReader;
     	StringBuffer readBuffer;
     	String readlimit;
     	if(kfile.exists()){
-    	log.info("checkALL!... {}-{}-{}",this.wid,this.tid,this.maxSw);
+    	log.info("checkALL!... window: {}-tenantid: {}-totalsw: {}",this.wid,this.tid,this.maxSw);
     	String inferenceCmd = "sh "+usrdir+"/MeteorPredictor/inference.sh "+String.valueOf(this.wid)+" "+String.valueOf(this.tid)+" "+String.valueOf(this.maxSw);	
-    	log.info("cmd: {}", inferenceCmd);
+    	//log.info("cmd: {}", inferenceCmd);
     	//String inferenceCmd = "touch "+String.valueOf(this.wid)+"_"+String.valueOf(this.tid)+"_"+String.valueOf(this.swid)+".txt";
     	//String[] callCmd = {"/bin/bash","-c",inferenceCmd};
         //final Cmdinjava cmdline = new Cmdinjava();
@@ -215,10 +215,10 @@ public class RoleManager implements TimerTask {
         		long knum = Long.valueOf(resultline[2]);
         		updateKvalue[tnum][swnum] = knum;
         		
-        		log.info("@@@@@@@ result line : {} ^^^^^^^^",knum);
+        		//log.info("@@@@@@@ result line : {} @@@@@@@ ",knum);
         	}
 //        
-        	log.info("^^^^^^^^^ InferenceTime : {} ^^^^^^^^",readBuffer);
+        	log.info("^^^^^^^^^ r limit value : {} ^^^^^^^^",readBuffer);
 //        	
         	
         	
@@ -308,18 +308,13 @@ public class RoleManager implements TimerTask {
 	        		readBuffer.append(line);
 	        	}
 	        	readlimit = readBuffer.toString();
-	        	log.info("^^^^^^^^^ readlimit : {} ^^^^^^^^",readlimit);
+	        	//log.info("^^^^^^^^^ readlimit : {} ^^^^^^^^",readlimit);
 	        	long kvalue = Long.valueOf(readlimit);
-	        	log.info("^^^^^^^^^ kvlaue : {} ^^^^^^^^",kvalue);
-	        	//int channelId = OpenVirteXController.channelList[this.tid][this.swid];
-				//Channel c = cg.find(channelId);
-				//GlobalChannelTrafficShapingHandler gct = (GlobalChannelTrafficShapingHandler) c.getPipeline().get("globalchanneltrafficShapingHandler");
-		        //gct.setReadChannelLimit(kvalue);
-		        //if(kvalue<=3000){ kvalue = 3000;}
-		        //if(kvalue>=10000){ kvalue = 8000;}
+	        	//log.info("^^^^^^^^^ kvlaue : {} ^^^^^^^^",kvalue);
+	        
 	        	updateKvalue[this.tid][this.swid] = kvalue;
 	        	long duringTime = System.currentTimeMillis() - startcmd;
-	        	log.info("duringTime({}/{}/{} = {}",this.wid,this.tid,this.swid,duringTime);
+	        	//log.info("duringTime({}/{}/{} = {}",this.wid,this.tid,this.swid,duringTime);
 		        //gct.setReadLimit(kvalue);
 	        	
 	        	
@@ -349,29 +344,7 @@ public class RoleManager implements TimerTask {
 				}
 	        	pc.destroy();
 	        }
-	        //log.info("88888888888888888888888888888");
 	        
-			
-//	    	try {
-//				Thread.currentThread().sleep(100);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
-	    	//int kvalue = readKvalue(this.wid,this.tid,this.swid);
-			//gct.setReadChannelLimit(kvalue);
-			//gct.setReadLimit(kvalue);
-			
-	    	//sleep
-//	    	try {
-//	    		log.info("now sleep ({}/{}/{})",this.wid,this.tid,this.swid);
-//				Thread.currentThread().sleep(4000);
-//			} catch (InterruptedException e) {
-//				// TODO Auto-generated catch block
-//				log.info("error thread sleep");
-//				e.printStackTrace();
-//			}
-	    	
 	    		this.wid++;
 	    	}
 //	    	else{
@@ -612,7 +585,7 @@ public class RoleManager implements TimerTask {
 
     public long checkAndSend(Channel c, OFMessage m, int tId, int swDec) {
     	
-        log.info("checkAndSend");
+        //log.info("checkAndSend");
         long currentThroughput = -1;
         long averageThroughput = 0;
     	long cumulativesValue = 0;
@@ -631,7 +604,7 @@ public class RoleManager implements TimerTask {
                 		
                 		//timestamp
                 		long start = System.currentTimeMillis();
-                		log.info("{} firstPackettime {} {} {}",m.getType(),tId,swDec,start);
+                		//log.info("{} firstPackettime {} {} {}",m.getType(),tId,swDec,start);
                 	}
                 	break;
                 case STATS_REPLY:
@@ -640,7 +613,7 @@ public class RoleManager implements TimerTask {
                 case FLOW_MOD:
                 		//timestamp
                 		long start = System.currentTimeMillis();
-                		log.info("{} FLOMODtime {} {} {}",m.getType(),tId,swDec,start);
+                		//log.info("{} FLOMODtime {} {} {}",m.getType(),tId,swDec,start);
                 		break;
                 default:
                 	break;
@@ -649,35 +622,12 @@ public class RoleManager implements TimerTask {
                 
                 GlobalChannelTrafficShapingHandler gct = (GlobalChannelTrafficShapingHandler) c.getPipeline().get("globalchanneltrafficShapingHandler");
                
- 
-//                if (updateKvalue[tId][swDec] != currentKvalue[tId][swDec]){
-//            		long kValue = 0;
-//            		if(updateKvalue[tId][swDec]<=1000){ kValue = currentKvalue[tId][swDec];}
-//            		else{ kValue = updateKvalue[tId][swDec];}
-//            		gct.setReadChannelLimit(kValue);
-//            	
-//            	log.info("update k-value: tid{} swid{} kvalue{}",tId,swDec,updateKvalue[tId][swDec]);
-//            	currentKvalue[tId][swDec] = updateKvalue[tId][swDec];
-//            	}
-                
-//                if (updateKvalue[tId][swDec] > 1000){
-//            		
-////                	if (updateKvalue[tId][swDec] > 8000){
-////                		updateKvalue[tId][swDec] -=3000;
-////                	}
-//                	
-//                	
-//            		long kValue = updateKvalue[tId][swDec];
-//            		gct.setReadChannelLimit(kValue);
-//            	
-//            		log.info("update k-value: tid{} swid{} kvalue{}",tId,swDec,updateKvalue[tId][swDec]);
-//            		currentKvalue[tId][swDec] = updateKvalue[tId][swDec];
-//            	}
+
                 
                 currentThroughput = sinconMonitor(gct,tId,swDec);
                 int currentChannelNum = ClientChannelPipeline.channelnum; 
                 // String result
-                log.info("sinconString: {}",sinconString(m,gct)); 
+                //log.info("sinconString: {}",sinconString(m,gct)); 
             	if(currentThroughput >= 0){
             		cumulative_throughputs[tId][swDec]+=currentThroughput;
                     message_counts[tId][swDec] += 1;
@@ -695,13 +645,13 @@ public class RoleManager implements TimerTask {
             		if(initalCheckAll != currentChannelNum){
             			if (initial_Check[tId][swDec] == 0){
             				initalCheckAll++;
-            				log.info("( {} / {} ) SINCON INTIALIZE---- : {} / 40",tId,swDec,initalCheckAll);
+            				log.info("( {} / {} ) Channel INTIALIZE---- : {} / 40",tId,swDec,initalCheckAll);
             				averageThroughput = average_throughput[tId][swDec];
             				initial_Check[tId][swDec]++;
             				boolean finishInitial = false;
             				//finishInitial = sinconInitialize(cumulativesValue, initalCheckAll ,averageThroughput, c);
             				if(finishInitial == true){
-                    			log.info("SINCON-- Start Initialize throughput!!");
+                    			log.info("Start Initialize throughput!!");
                     			cumulative_throughputs = new long[100][300];
                     			message_counts = new int[100][300];
                     			average_throughput = new long[100][300];
@@ -733,15 +683,6 @@ public class RoleManager implements TimerTask {
     		initalCheck = false;
     	}
     	
-//    	if (updateKvalue[tId][swDec] != currentKvalue[tId][swDec]){
-//    		long kValue = 0;
-//    		if(updateKvalue[tId][swDec]<=5000){ kValue = 5000;}
-//    		else{ kValue = updateKvalue[tId][swDec];}
-//    		gct.setReadChannelLimit(kValue);
-//    	
-//    	log.info("update k-value: tid{} swid{} kvalue{}",tId,swDec,updateKvalue[tId][swDec]);
-//    	currentKvalue[tId][swDec] = updateKvalue[tId][swDec];
-//    	}
     	
     	//0. initial throughput limit
     	long firstLimit = ClientChannelPipeline.firstThroughputLimit[tId][swDec];
@@ -770,7 +711,7 @@ public class RoleManager implements TimerTask {
     	
     	
     	
-    	log.info("channel limit monitor : {} {} {} {}",tId,swDec,readLimit,writeLimit);
+    	//log.info("channel limit monitor : {} {} {} {}",tId,swDec,readLimit,writeLimit);
     	long standardReadThroughut = (long) (readLimit * 0.9); //3600 
     	long standardWriteThroughut = (long) (writeLimit * 0.9); 
     	long addReadThroughput = (long) (readLimit * 0.1);  //400
@@ -836,7 +777,7 @@ public class RoleManager implements TimerTask {
 
     	long addstack_write = addWriteThroughputStack[tId][swDec];
      	
-    	log.info("{}-Monitor: {} {} CurrentThroughput {} Limit {} Adapt {} debt {}",visorName,tId,swDec,gct.getTrafficCounter().getLastReadThroughput(),gct.getReadChannelLimit(),adaptiveLimit, debtThroughput);
+    	//log.info("{}-Monitor: {} {} CurrentThroughput {} Limit {} Adapt {} debt {}",visorName,tId,swDec,gct.getTrafficCounter().getLastReadThroughput(),gct.getReadChannelLimit(),adaptiveLimit, debtThroughput);
     	
     	//data collect for machine learning 
     	//dataCollectorTimer();
@@ -961,8 +902,7 @@ public class RoleManager implements TimerTask {
     	
     	FileWriter fw = null;
     	BufferedWriter bw = null;
-//    	Channel cd = ClientChannelPipeline.channelList[1][3];
-//    	log.info("Channel list[1][3]: {}",cd);
+
     	//1. Current Time
     	long currentTime = System.currentTimeMillis();
     	//2. tenantNum
@@ -1238,7 +1178,7 @@ public class RoleManager implements TimerTask {
         			String filePath = usrdir+"/MeteorPredictor/windowData/"+fileName;
         			File file = new File(filePath);
         			file.createNewFile();
-        			log.info("{}",filePath);
+        			//log.info("{}",filePath);
         			
         			
         			if (windowId==1){
@@ -1330,7 +1270,7 @@ public class RoleManager implements TimerTask {
                  		long kValue = updateKvalue[t][s];
                  		gct.setReadChannelLimit(kValue);
                  	
-                 		log.info("update k-value: tid{} swid{} kvalue{}",t,s,updateKvalue[t][s]);
+                 		log.info("update k-value: tid> {} swid> {} kvalue> {}",t,s,updateKvalue[t][s]);
                  		currentKvalue[t][s] = updateKvalue[t][s];
                  	}
         			
@@ -1443,7 +1383,7 @@ public class RoleManager implements TimerTask {
     	    			shaperQueues.get(qKey).setPacketinNum(windowId, windowCount, packetInCount); 
     	    			shaperQueues.get(qKey).setStatNum(windowId, windowCount, statCount); 
     	    			shaperQueues.get(qKey).setFlowmodNum(windowId, windowCount, flowCount); 
-    	    			//log.info("cccc------------------------{},{}",windowId,windowCount);
+    	    			
     	    			
     				}
         			String sBw = String.valueOf(readBytebuffer[t][s]);
@@ -1461,11 +1401,11 @@ public class RoleManager implements TimerTask {
         			String processingTime = String.valueOf(flowmodProtime);
         			long flowmodtime = OVXFlowMod.flowmodtime[t][s];
         			String flowmodcurTime = String.valueOf(flowmodtime);
-        			//log.info("3333------------------------{},{}",windowId,windowCount);
+        			
         			try{
         	    		fw = new FileWriter(filePath, true);
         	    		bw = new BufferedWriter(fw);
-        	    		//log.info("4444------------------------{},{}",windowId,windowCount);
+        	    		
         	    		bw.write(sTime);
         	    		bw.write(",");
         	    		bw.write(shostNum);
@@ -1547,7 +1487,6 @@ public class RoleManager implements TimerTask {
 	    			int qKey = Integer.valueOf(qId);
 	    			//ChannelQueue cq = shaperQueues.get(qKey);
 	    			
-	    			//log.info("yy**  qkey: {}/{}, hashkey: {} / {}",qKey,shaperQueues.containsKey(qKey),shaperQueues.get(qKey).getKey(),shaperQueues.keySet());	
 	    			List<Integer> inversecount = new ArrayList<Integer>();
         			boolean inverse = false;
         			int aggregatePoint = -1;
@@ -1567,7 +1506,6 @@ public class RoleManager implements TimerTask {
 	        				}
 	        				else if(shaperQueues.get(qKey).getThroughput(windowId, w) >= readLimit){
 	        					long newThroughputValue = (shaperQueues.get(qKey).getSize(windowId, w)*100)/shaperQueues.get(qKey).getInterval(windowId, w);
-	        					//log.info("^^ {}/{}/{}",windowId,w,shaperQueues.get(qKey).getSize(windowId, w));
 	        					shaperQueues.get(qKey).setThroughput(windowId, w,newThroughputValue);
 	        					inverse = true;
 	        					aggregatePoint=w;
@@ -1679,8 +1617,8 @@ public class RoleManager implements TimerTask {
         		
     			//inference
     			for (int t=1; t<=currentTenatntNum; t++){
-            		//int tswNum = tenantChannelnum[t];
-            		int tswNum = 10;
+            		int tswNum = tenantChannelnum[t];
+            		//int tswNum = 10;
             		inferenceThread ith = new inferenceThread();
             		ith.setthreadId(t, tswNum, windowId);
             		ith.start();
@@ -1712,7 +1650,6 @@ public static void originalWindow() throws IOException{
 	//channelNum
 	int currentChannelNum = ClientChannelPipeline.channelnum; 
 	int[] tenantChannelnum = ClientChannelPipeline.tenantChannelnum;
-	//log.info("timer : windowcount{}, windowId{}",windowCount,windowId);
 	
 	if (windowCount == 0){
 		//filecreate for windowId, tenant_sw
@@ -1753,7 +1690,6 @@ public static void originalWindow() throws IOException{
     			File fullfile = new File(fullfilePath);
     			fullfile.createNewFile();
     			
-    			//log.info("^^^^^ qKey: {} : queuechannel size {} / {}  ^^^^",queueKey,shaperQueues.size(),shaperQueues.get(queueKey).getKey());
     			}
     			
     			
@@ -1898,26 +1834,12 @@ public static void originalWindow() throws IOException{
 							bufferWaitTime[t][s]=0;
 						}
 					}
-					//log.info("aaaa------------------------{},{}",windowId,windowCount);
 					lastCumulativeReadByte[t][s] = nowCumulativeReadByte;
 	    			lastTimenow[t][s] = currentTime;
 	    			
 	    			String qId = String.valueOf(t)+String.valueOf(s);
 	    			int qKey = Integer.valueOf(qId);
-	    			//ChannelQueue cq = shaperQueues.get(qKey);
 	    			
-	    			//log.info("bbbb------------------------{},{}",windowId,windowCount);
-//	    			cq.shaperQueue[windowId][windowCount][0] = readBytebuffer[t][s];
-//	    			cq.shaperQueue[windowId][windowCount][1] = nowreadByte;
-//	    			cq.shaperQueue[windowId][windowCount][2] = bufferWaitTime[t][s];
-//	    			cq.shaperQueue[windowId][windowCount][3] = nowreadTime;
-//	    			cq.shaperQueue[windowId][windowCount][4] = windowCount;
-//	    			cq.shaperQueue[windowId][windowCount][5] = hostNum;
-//	    			cq.shaperQueue[windowId][windowCount][6] = swlink;
-//	    			cq.shaperQueue[windowId][windowCount][7] = packetInCount;
-//	    			cq.shaperQueue[windowId][windowCount][8] = statCount;
-//	    			cq.shaperQueue[windowId][windowCount][9] = flowCount;
-	    			//[throughput,size,wait,interval,windowcount,hostnum,linknum,packetin,stat,flowmod]
 	    			shaperQueues.get(qKey).setThroughput(windowId, windowCount, readBytebuffer[t][s]); 
 	    			shaperQueues.get(qKey).setSize(windowId, windowCount, nowreadByte); 
 	    			shaperQueues.get(qKey).setWait(windowId, windowCount, bufferWaitTime[t][s]); 
@@ -2479,25 +2401,6 @@ public static void monitorInverseShapingTimer() throws IOException{
         			String realWriteBytes = String.valueOf(ttc.getRealWrittenBytes());
         			
         			
-        			//log.info("$$$$, {}",accresult);
-//        			if(windowId==0 && windowCount==0){
-//        				tmp_byte[t][s] = cumReadByte;
-//            			tmp_lastime[t][s] = lastTimec;
-//            			long willreadByte = cumReadByte;
-//        				long willInterval = 0;	
-//        			}
-//        			else{
-//        				long willreadByte = cumReadByte - tmp_byte[t][s];
-//        				long willInterval = lastTimec - tmp_lastime[t][s];		
-//        				tmp_byte[t][s] = cumReadByte;
-//            			tmp_lastime[t][s] = lastTimec;
-//        			}
-//        			if (windowCount %10 == 9){
-//        				cumByte_window[t][s]+=cumReadByte;
-//        			}
-//        			if (windowCount % 10 == 0 && windowCount >0){
-//        				
-//        			}
 					
         			
         			
@@ -2743,23 +2646,7 @@ public static void monitorInverseShapingTimer() throws IOException{
         }
         return throughput;
     }
- /*    String sendMsg(OFMessage msg, Channel c) {
-//  log.info("sendMsg");
 
-    	 if (c != null) {
-      return checkAndSend(c, msg);
-  		} 
-  else {
-      final Map<Channel, Role> readOnly = Collections
-              .unmodifiableMap(this.currentState.get());
-      for (Channel chan : readOnly.keySet()) {
-          if (chan == null) {
-              continue;
-          }
-          return checkAndSend(chan, msg);
-      		}
-  		}
-     }*/
 
     public synchronized void removeChannel(Channel channel) {
         this.state = getState();
