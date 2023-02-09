@@ -179,7 +179,8 @@ These python scripts use Mininet API, and Mininet utilizes Open vSwitches for SD
     * The GUI_port is set as 1000 + virtual network ID.
     * For example, the GUI_port of the first virtual network is 2000 (2000 + 0).
   * ONOS controller
-    * GUI address: <SDNcontrollerIPadress:GUI_port/onos/ui>, example) browse `20.0.0.3:2000/onos/ui` on `firefox`
+    * GUI address: <SDNcontrollerIPadress:GUI_port/onos/ui>, 
+      * (example) browse `20.0.0.3:2000/onos/ui` on `firefox`
     * Login ID: `karaf` / PW: `karaf`
 
   ![image](https://user-images.githubusercontent.com/17779090/216348067-68309122-8f9e-43cb-829c-b7a762379cbf.png)
