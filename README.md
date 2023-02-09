@@ -62,7 +62,7 @@ The repository is organized as follows:
     ```
   * Install libraries required for *Meteor* predictor
     ```
-    sudo apt-get install python-pip3
+    sudo apt-get install python3-pip
     pip3 install numpy
     pip3 install pandas
     pip3 install torch==1.10.1
