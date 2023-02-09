@@ -67,7 +67,7 @@ The repository is organized as follows:
     pip3 install pandas
     pip3 install torch==1.10.1
     pip3 install sympy
-    pip3 install sklearn
+    pip3 install scikit-learn
     ```
    * PyTorch version must be 1.10.1 if using our pre-trained model
    
