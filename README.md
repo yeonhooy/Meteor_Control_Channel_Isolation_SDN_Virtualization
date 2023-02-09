@@ -62,12 +62,12 @@ The repository is organized as follows:
     ```
   * Install libraries required for *Meteor* predictor
     ```
-    sudo apt-get install python-pip
-    pip install numpy
-    pip install pandas
-    pip install torch
-    pip install sympy
-    pip install sklearn
+    sudo apt-get install python-pip3
+    pip3 install numpy
+    pip3 install pandas
+    pip3 install torch==1.10.1
+    pip3 install sympy
+    pip3 install sklearn
     ```
    * PyTorch version must be 1.10.1 if using our pre-trained model
    
