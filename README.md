@@ -130,6 +130,14 @@ These python scripts use Mininet API, and Mininet utilizes Open vSwitches for SD
   ```
   sudo docker ps 
   ```
+* From the SDN controller side, access the SDN controller via web browser.
+  * The address of the SDN controller is http://'server IP address':GUI_port.
+    * The GUI_port is set as 1000 + virtual network ID.
+    * For example, the GUI_port of the first virtual network is 20000 (20000 + 0).
+  * ONOS controller
+    * GUI address: <SDNcontrollerIPadress:GUI_port/onos/ui>
+      * (example) browse `20.0.0.3:20000/onos/ui` on `firefox`
+    * Login ID: `karaf` / PW: `karaf`
 
 ### 3. Run *Meteor* network hypervisor
 * Run *Meteor*
@@ -180,10 +188,10 @@ These python scripts use Mininet API, and Mininet utilizes Open vSwitches for SD
   * From the SDN controller side, access the SDN controller via web browser.
   * The address of the SDN controller is http://'server IP address':GUI_port.
     * The GUI_port is set as 1000 + virtual network ID.
-    * For example, the GUI_port of the first virtual network is 2000 (2000 + 0).
+    * For example, the GUI_port of the first virtual network is 20000 (20000 + 0).
   * ONOS controller
     * GUI address: <SDNcontrollerIPadress:GUI_port/onos/ui>
-      * (example) browse `20.0.0.3:2000/onos/ui` on `firefox`
+      * (example) browse `20.0.0.3:20000/onos/ui` on `firefox`
     * Login ID: `karaf` / PW: `karaf`
 
   ![image](https://user-images.githubusercontent.com/17779090/216348067-68309122-8f9e-43cb-829c-b7a762379cbf.png)
