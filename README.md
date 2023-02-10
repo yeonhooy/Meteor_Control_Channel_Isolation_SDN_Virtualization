@@ -72,7 +72,7 @@ The repository is organized as follows:
     ```
    * PyTorch version must be 1.10.1 if using our pre-trained model
    
-* oftware versions 
+* Software versions 
   * OS: Linux ununtu 14.04 or higher 
   * python3: 3.6.3 or higher 
   * Java: 1.7.0 or higher
