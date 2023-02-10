@@ -1,5 +1,5 @@
 # Meteor (Control Channel Isolation in SDN Virtualization)
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7620317.svg)](https://doi.org/10.5281/zenodo.7620317)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7627685.svg)](https://doi.org/10.5281/zenodo.7627685)
 
 
 This repository contains the implementation of *Meteor*, a network hypervisor for control channel isolation with control traffic prediction.
