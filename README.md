@@ -132,7 +132,7 @@ These python scripts use Mininet API, and Mininet utilizes Open vSwitches for SD
   ```
 * From the SDN controller side, access the SDN controller via web browser.
   * The address of the SDN controller is http://'server IP address':GUI_port.
-    * The GUI_port is set as 1000 + virtual network ID.
+    * The GUI_port is set as 20000 + virtual network ID.
     * For example, the GUI_port of the first virtual network is 20000 (20000 + 0).
   * ONOS controller
     * GUI address: <SDNcontrollerIPadress:GUI_port/onos/ui>
