@@ -40,11 +40,12 @@ sudo docker stop $(sudo docker ps -a -q);
 sudo docker rm -f $(sudo docker ps -a -q);
 
 echo "Now running [$num_tenants] onos dockers\n"
-onos_version="onos_original"
+#onos_version="onos_original"
+onos_version="onosproject/onos"
 network_mode=""
 match_port_="True"
 if [ $onos_ver -eq 1 ]; then
-	onos_version="onos_hsjin"
+	onos_version="onosproject/onos:latest"
 fi
 if [ $net_mode -eq 1 ]; then
 	network_mode="--network host"
@@ -107,6 +108,7 @@ do
 		curl -sS --user karaf:karaf -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$onos_ip:8181/onos/v1/configuration/org.onosproject.fwd.ReactiveForwarding -d '{ "matchTcpUdpPorts": "false", "matchIpv4Address": "true", "flowTimeout": "500000"}'
 	fi
 		curl -sS --user karaf:karaf -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$onos_ip:8181/onos/v1/configuration/org.onosproject.provider.lldp.impl.LldpLinkProvider -d '{ "probeRate": "6000", "staleLinkAge": "1000000"}'
-		curl -sS --user karaf:karaf -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$onos_ip:8181/onos/v1/configuration/org.onosproject.provider.of.device.impl.OpenFlowDeviceProvider -d '{ "portStatsPollFrequency": "1",  "flowStatsPollFrequency": "1"}'
+		curl -sS --user karaf:karaf -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$onos_ip:8181/onos/v1/configuration/org.onosproject.provider.of.device.impl.OpenFlowDeviceProvider -d '{ "portStatsPollFrequency": "1"}'
+		curl -sS --user karaf:karaf -X POST --header 'Content-Type: application/json' --header 'Accept: application/json' http://$onos_ip:8181/onos/v1/configuration/org.onosproject.provider.of.flow.impl.OpenFlowRuleProvider -d '{ "flowPollFrequency": "1"}'
 done
 
