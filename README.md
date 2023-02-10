@@ -104,6 +104,7 @@ These python scripts use Mininet API, and Mininet utilizes Open vSwitches for SD
   
   `sudo python linear.py -n 20 -t 1 -v 10 -i 20.0.0.1`
   ```
+  cd PhysicalTopology/
   sudo python linear.py --help
   sudo python linear.py -n <node number> -t <tenant number> -v <vnode number> -i <Meteor IP address>
   - Generate traffic? > Wait for the virtual network to be created; When VN created, press any key to generate traffic
@@ -122,6 +123,7 @@ These python scripts use Mininet API, and Mininet utilizes Open vSwitches for SD
   
   `sudo sh onos.sh -t 1 -i 20.0.0.3`
   ```
+  cd SDNcontroller/
   sudo sh onos.sh -t <total tenant number> -i <SDN controller server IP address> 
   ```
 * Check the executed ONOS controller status
@@ -145,10 +147,11 @@ These python scripts use Mininet API, and Mininet utilizes Open vSwitches for SD
 * Generate virtual network per tenant
   * Automatic generation of virtual network topology scripts 
     * Virtual network topology of linear example
-      `python vncreation_linear.py -t 1 -v 10 -i 20.0.0.3`
+    
+      `python vncreate_linear.py -t 1 -v 10 -i 20.0.0.3`
       ```
-      cd Meteor/vnCreation/linear
-      python vncreation_linear.py -t <tenant num> -v <virtual switch  num> -i <SDN controller IP address>
+      cd Meteor/vnetCreation/linear
+      python vncreate_linear.py -t <tenant num> -v <virtual switch  num> -i <SDN controller IP address>
       Output: total_<tenantNum>_<VNnodeNum>.sh
 
       ```
