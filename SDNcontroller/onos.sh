@@ -8,8 +8,9 @@ help() {
   echo "\t-i [address] : The address of SDN controller server - Required"
     exit 0
 }
+#default
 num_tenants=0
-ip_address="20.1.0.3"
+ip_address="127.0.0.1"
 net_mode=0 # default container networking mode
 onos_ver=0 # orginal (default)
 match_port=0 # Match TCP/UDP port 
@@ -41,7 +42,7 @@ sudo docker rm -f $(sudo docker ps -a -q);
 
 echo "Now running [$num_tenants] onos dockers\n"
 #onos_version="onos_original"
-onos_version="onosproject/onos"
+onos_version="onosproject/onos:2.4.0"
 network_mode=""
 match_port_="True"
 if [ $onos_ver -eq 1 ]; then
