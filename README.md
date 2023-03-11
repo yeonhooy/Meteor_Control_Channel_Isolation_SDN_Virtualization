@@ -22,7 +22,7 @@ The repository is organized as follows:
 * `PhysicalTopology/`: contains scripts for physical network topology using Mininet; `linear.py`, `fattree.py`.
 * `SDNcontroller/`: contains scripts for executing SDN controllers that control virtualized networks; `onos.sh`.
 * `Meteor/`: contains the core implementation of *Meteor* hypervisor. *Meteor* is built as Java Maven project.
-   * `Meteor/Meteorstart.sh` starts the *Meteor* hypervisor
+   * `Meteor/run_meteor.sh` starts the *Meteor* hypervisor
    * `Meteor/vnCreation/` contains scripts for virtual network creations
    * `Meteor/MeteorPredictor/` contains scripts for control traffic inference by *Meteor* predictor
    * `Meteor/MeteorPredictor/model/meterPredictor.pt` is the pre-trained *Meteor* predictor model used in our study
