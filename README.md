@@ -34,7 +34,9 @@ The repository is organized as follows:
 ### 1. Physical network emulation
 * Prerequisite
   * Install Mininet for physical network emulation
+  
     `sudo apt-get install mininet`
+    
   * Install iperf3 for data plane traffic generation
 
     `sudo apt-get install iperf3`
