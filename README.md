@@ -90,7 +90,7 @@ The repository is organized as follows:
 * Python packages (install with conda)
   * The dependencies and requirements of our conda setting are given in "MeteorPredictor_training/requirements.txt". You can set a similar conda environment through the following command.
   ```
-  conda install -n <env_name> requirements.txt
+  conda install -n <env_name> --yes --file requirements.txt
   ```
 
 
