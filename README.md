@@ -23,7 +23,7 @@ The repository is organized as follows:
 * `SDNcontroller/`: contains scripts for executing SDN controllers that control virtualized networks; `onos.sh`.
 * `Meteor/`: contains the core implementation of *Meteor* hypervisor. *Meteor* is built as Java Maven project.
    * `Meteor/run_meteor.sh` starts the *Meteor* hypervisor
-   * `Meteor/vnCreation/` contains scripts for virtual network creations
+   * `Meteor/vnetCreation/` contains scripts for virtual network creations
    * `Meteor/MeteorPredictor/` contains scripts for control traffic inference by *Meteor* predictor
    * `Meteor/MeteorPredictor/model/meterPredictor.pt` is the pre-trained *Meteor* predictor model used in our study
 * `MeteorPredictor_training/`: contains training codes and training dataset for *Meteor* predictor.
@@ -34,7 +34,6 @@ The repository is organized as follows:
 ### 1. Physical network emulation
 * Prerequisite
   * Install Mininet for physical network emulation
-
     `sudo apt-get install mininet`
   * Install iperf3 for data plane traffic generation
 
