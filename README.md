@@ -213,5 +213,15 @@ These python scripts use Mininet API, and Mininet utilizes Open vSwitches for SD
   cp model/meteorPredictor.pt ../Meteor/MeteorPredictor/model/meterPredictor.pt
   ```
 
+## Citation
+
+```
+@article{Meteor2023,
+  title={Control Channel Isolation in SDN Virtualization: A Machine Learning Approach},
+  author={Yeonho Yoo, Gyeongsik Yang, Changyong Shin, Jeunghwan Lee and Chuck Yoo},
+  booktitle={The 23rd International Symposium on Cluster, Cloud and Internet Computing},
+  year={2023}
+}
+```
 
 
