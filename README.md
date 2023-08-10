@@ -1,4 +1,4 @@
-# Meteor (Control Channel Isolation in SDN Virtualization)
+# Meteor (Control Channel Isolation in SDN Virtualization using LSTM Autoencoder)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7627685.svg)](https://doi.org/10.5281/zenodo.7627685)
 
 
