@@ -2,8 +2,8 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.7627685.svg)](https://doi.org/10.5281/zenodo.7627685)
 
 
-This repository contains the implementation of *Meteor*, a network hypervisor for control channel isolation with control traffic prediction.
-*Meteor* deploys LSTM-autoencoder for control channel isolation, and please refer to our paper for more details.
+This repository contains the implementation of [*Meteor*](https://doi.org/10.1109/CCGrid57682.2023.00034), a network hypervisor for control channel isolation with control traffic prediction.
+*Meteor* deploys LSTM-autoencoder for control channel isolation, and please refer to our [paper](https://doi.org/10.1109/CCGrid57682.2023.00034) for more details.
 
 ## Overview
 
